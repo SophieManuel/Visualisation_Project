@@ -3,7 +3,7 @@
 
 # Description 
 
-This project is about producing a python module that produces interactives graphs(such as  maps, histograms..). The user can choose the desired year and indicator.
+This project is about producing a python module that produces interactives graphs(such as  maps, histograms..). The user can choose the desired year and indicators to display.
 The module is aimed for public use and is expected to be installed using pip.
 
 # Documentation

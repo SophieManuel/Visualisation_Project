@@ -1,4 +1,5 @@
-# Spatial data visualization
+# Spatial data visualization 
+we should find a new name for the project (may be depending on the dataset we want to work with ?)
 
 
 # Description 

@@ -1,0 +1,28 @@
+package worldwild stat wwstat
+
+usefull packages :
+dash ploty
+altair
+geopandas
+
+
+onglets du lien:
+maps
+histogram
+table (data)
+(roling) charts
+trends & pyramid + age profile 
+
+
+First ideas for the class:
+
+class__visualiser__(data):
+	init
+	maps
+	histogram
+	display (data)
+	(roling) charts
+	trends 
+	pyramid ?
+
+

@@ -17,19 +17,30 @@ The module is aimed for public use and is expected to be installed using pip.
 write your name after the "-"
 
 display maps - 
+
 choropleth map -
+
 display per year -
+
 per indicators -
+
 map interactivity -
+
 loading results - 
 
+
 website -
+
 tabs -
 
 optionnal:
+
 table -
+
 histogram -
+
 trends -
+
 rank -
 
 # Documentation

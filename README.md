@@ -70,6 +70,24 @@ vis.bar(features = ['feature_1', 'feature_3'], countries = ['FR', 'US'])
 For more information about possible plots, you can refer to the 
 [API documentation](#).
 
+## Web Application Usage
+
+1. To run the web application, type in a terminal:
+
+```
+$ wwstatviz --port 7890
+Application is run in http://0.0.0.0:7890
+```
+
+2. Then, in the web browser, open http://0.0.0.0:7890.
+3. Upload a CSV file containing the data (in the same format described above).
+4. Select the features to visualize in the appropriate menu.
+4. In the left menu, select the type of visualization to plot (you can filter
+   by country).
+5. The web application provide buttons to download the plot in PDF or PNG
+   formats for later use.
+
+
 ## Authors
 
 - Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)

@@ -7,7 +7,6 @@ types of plots.
 ## Spatial data visualization 
 we should find a new name for the project (may be depending on the dataset we want to work with ?)
 
-
 ## Description 
 
 This project is about producing a python module that produces interactives graphs(such as  maps, histograms..). The user can choose the desired year and indicators to display.

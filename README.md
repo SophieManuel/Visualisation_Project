@@ -18,7 +18,7 @@ The module is aimed for public use and is expected to be installed using pip.
 Documentation is available here (to be discussed)
 
 ## Authors
- * Sophie Manuel : sophie.manuel@etu.umontpellier.fr
- * Ravahere Paint-Koui : ravahere.paint-koui@etu.umontpellier.fr
- * Seydou Sane : seydou.sane@etu.umontpellier.fr
- * Anas Zakroum : anas.zakroum@etu.umontpellier.fr
+- Sophie Manuel : sophie.manuel@etu.umontpellier.fr
+- Ravahere Paint-Koui : ravahere.paint-koui@etu.umontpellier.fr
+- Seydou Sane : seydou.sane@etu.umontpellier.fr
+- Anas Zakroum : anas.zakroum@etu.umontpellier.fr

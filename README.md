@@ -32,11 +32,11 @@ First, we define data in a pandas dataframe having the following specific format
 
 |    | feature\_1   | feature\_2   | ... | feature\_N   |
 |----|:------------:|:------------:|-----|:------------:|
-| MA |     3.11     |      930     | ... |      241     |
-| FR |     3.11     |     1230     | ... |      123     |
-| PF |     3.11     |     1930     | ... |      197     |
+| JP |     3.11     |      930     | ... |      241     |
+| NO |     3.11     |     1230     | ... |      123     |
+| AT |     3.11     |     1930     | ... |      197     |
 | .. |              |              | ... |              |
-| SN |     5.36     |     1820     | ... |       93     |
+| CO |     5.36     |     1820     | ... |       93     |
 
 The rows of the data frame must be indexed by the 
 [ISO country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) 

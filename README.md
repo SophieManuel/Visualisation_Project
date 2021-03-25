@@ -1,5 +1,10 @@
-# Spatial data visualization 
-we should find a new name for the project (may be depending on the dataset we want to work with ?)
+# Worldwide_statistics
+### Spatial data visualization 
+
+Inspired by A. Raftery work:
+https://bayespop.shinyapps.io/wpp2019explorer/
+
+Worldwide_statistics is a Python way to produce a similar study.
 
 
 # Description 

@@ -85,7 +85,7 @@ For more information about possible plots, you can refer to the
 1. To run the web application, type in a terminal:
 
 ```
-$ wwstatviz --port 7890
+$ wwstatvis --port 7890
 Application is run in http://0.0.0.0:7890
 ```
 

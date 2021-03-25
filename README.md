@@ -12,6 +12,26 @@ Worldwide_statistics is a Python way to produce a similar study.
 This project is about producing a python module that produces interactives graphs(such as  maps, histograms..). The user can choose the desired year and indicators to display.
 The module is aimed for public use and is expected to be installed using pip.
 
+## Task affectation
+
+write your name after the "-"
+
+display maps - 
+choropleth map -
+display per year -
+per indicators -
+map interactivity -
+loading results - 
+
+website -
+tabs -
+
+optionnal:
+table -
+histogram -
+trends -
+rank -
+
 # Documentation
 
 Documentation is available here (to be discussed)

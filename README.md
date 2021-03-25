@@ -4,12 +4,24 @@ This is a python package providing a high-level API that simplifies
 the visualization of statistics about countries on a world map or in different
 types of plots.
 
+Moreover, this package also includes a user-friendly web application that makes 
+use of the internal API to visualize statistics in a browser destined to
+regular (non-developer) end-users.
+
 This package is still WIP.
 
 ## Installation
 
+To install the API, type:
+
 ```
 pip install wwstatviz
+```
+
+To install the web application:
+
+```
+pip install wwstatviz-webapp
 ```
 
 ## API Usage

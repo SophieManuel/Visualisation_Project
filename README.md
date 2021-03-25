@@ -12,6 +12,52 @@ This package is still WIP.
 pip install wwstatviz
 ```
 
+## API Usage
+
+wwstatviz logic is as follows:
+
+First, we define data in a pandas dataframe having the following specific format:
+
+|    | feature\_1   | feature\_2   | ... | feature\_N   |
+|----|:------------:|:------------:|-----|:------------:|
+| MA |     3.11     |      930     | ... |      241     |
+| FR |     3.11     |     1230     | ... |      123     |
+| PF |     3.11     |     1930     | ... |      197     |
+| .. |              |              | ... |              |
+| SN |     5.36     |     1820     | ... |       93     |
+
+The rows of the data frame must be indexed by the 
+[ISO country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) 
+(Alpha-2 or Alpha 3 code). The data frame should contain at least one feature
+column that hold the values to be visualized in the map or in the plot. The
+feature columns must hold numerical values.
+
+Second, we declare a visualizer object and provide as argument the dataframe described above:
+
+```python
+from wwstatviz.visual import Visualizer
+df = pd.read_csv('...')
+vis = Vizualizer(data = df)
+```
+
+Third, we use the visualizer to generate plots:
+
+```python
+# generate a choropleth map visualizing the values of feature_1
+vis.map(type = 'choropleth', feature = 'feature_1') 
+
+# to generate scatter points map visualizing values of feature_3
+vis.map(type = 'scatter', feature = 'feature_3')
+
+# bar plot in which:
+# the x-axis contains the set of countries given in the argument "countries"
+# the y-axis contains the bars of the features given in the argument "features"
+vis.bar(features = ['feature_1', 'feature_3'], countries = ['FR', 'US'])
+```
+
+For more information about possible plots, you can refer to the 
+[API documentation](#).
+
 ## Authors
 
 - Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)

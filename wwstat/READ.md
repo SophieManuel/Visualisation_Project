@@ -1,1 +1,0 @@
-Here is the python code for the wwstat (worldwide_statics) module.

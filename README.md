@@ -97,7 +97,7 @@ Application is run in http://0.0.0.0:7890
 
 For the time being, the work is organized as follows : 
 
-* Data preprocessing and loading will be done by <name.s>;  
+* Data preprocessing and loading will be done by Seydou;  
 * The interactive choropleth map will be done by <name.s>;  
 	* plot the map;  
 	* options of the map (years, indicators);

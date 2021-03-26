@@ -1,4 +1,4 @@
-# Worldwide statistics visualisation
+# Worldwide statistics visualization
 *** 
 
 ## A spatial data visualization project

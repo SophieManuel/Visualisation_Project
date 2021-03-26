@@ -1,4 +1,4 @@
-# Worldwide statistics visualization
+# Worldwide statistics visualisation
 *** 
 
 ## A spatial data visualization project
@@ -97,17 +97,19 @@ Application is run in http://0.0.0.0:7890
 
 For the time being, the work is organized as follows : 
 
-* Data preprocessing and loading will be done by Seydou;  
-* The interactive choropleth map will be done by <name.s>;  
+* Data preprocessing and loading will be done by <name.s>;  
+* The interactive choropleth map will be done by Anas 
 	* plot the map;  
 	* options of the map (years, indicators);
 	* import/use the correct datas.   
 * The histogram/kde and sortable datatable will be done by Sophie using the package `pandas`;  
-* Unit Test & Memory wil be done by <name.s>; 
+* Heatmap Anas
+* Lineplot Anas
+* Unit Testing
 * Animation <name.s>;
 * Documentation will be written by the team;  
 * Beamer for the oral presentation will be done by the team.  
-* (optional) : The website
+* Web app : depending on 
 
 ## Documentation
 

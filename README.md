@@ -97,8 +97,8 @@ Application is run in http://0.0.0.0:7890
 
 For the time being, the work is organized as follows : 
 
-* Data preprocessing and loading will be done by <name.s>;  
-* The interactive choropleth map will be done by Anas 
+* Data preprocessing and loading will be done by Seydou
+* The interactive choropleth map will be done by Anas, Rava
 	* plot the map;  
 	* options of the map (years, indicators);
 	* import/use the correct datas.   
@@ -109,7 +109,7 @@ For the time being, the work is organized as follows :
 * Animation <name.s>;
 * Documentation will be written by the team;  
 * Beamer for the oral presentation will be done by the team.  
-* Web app : depending on 
+* Web app : Anas
 
 ## Documentation
 

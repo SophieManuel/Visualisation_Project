@@ -95,34 +95,18 @@ Application is run in http://0.0.0.0:7890
 
 ## Task affectation
 
-write your name after the "-"
+For the time being, the work is organized as follows : 
 
-display maps - 
+* Data preprocessing and loading will be done by <name.s>;  
+* The interactive choropleth map will be done by <name.s>;  
+	* plot the map;  
+	* options of the map (years, indicators);
+	* import/use the correct datas.   
+* The histogram and sortable datatable will be done by <name.s>;  
+* The website will be set by <name.s>;  
+* Documentation will be written by the team;  
+* Beamer for the oral presentation will be done by the team.  
 
-choropleth map -
-
-display per year -
-
-per indicators -
-
-map interactivity -
-
-loading results - 
-
-
-website -
-
-tabs -
-
-optionnal:
-
-table -
-
-histogram -
-
-trends -
-
-rank -
 
 ## Documentation
 

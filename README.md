@@ -1,22 +1,19 @@
 # Worldwide_statistics
-### Spatial data visualization 
+*** 
+
+## A spatial data visualization project
 
 Inspired by A. Raftery work:
 https://bayespop.shinyapps.io/wpp2019explorer/
 
-Worldwide_statistics is a Python way to produce a similar study.
+Worldwide_statistics is about producing interactive graphs (such as maps, histograms..). The user can choose the desired year and indicators to display.
 
+## The package
+*** 
 
-# Description 
+This is a python package providing a high-level API that simplifies the visualization of statistics about countries on a world map or in different types of plots.
 
-This project is about producing a python module that produces interactives graphs(such as  maps, histograms..). The user can choose the desired year and indicators to display.
-The module is aimed for public use and is expected to be installed using pip.
-
-# The package
-
-This is a python package providing a high-level API that simplifies the visualization of statistics about countries on a world map or in differenttypes of plots.
-
-Moreover, this package also includes a user-friendly web application that makes use of the internal API to visualize statistics in a browser destined toregular (non-developer) end-users.
+Moreover, this package also includes a user-friendly web application that makes use of the internal API to visualize statistics in a browser destined to regular (non-developer) end-users.
 
 This package is still WIP.
 
@@ -51,7 +48,7 @@ First, we define data in a pandas dataframe having the following specific format
 The rows of the data frame must be indexed by the 
 [ISO country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) 
 (Alpha-2 or Alpha 3 code). The data frame should contain at least one feature
-column that hold the values to be visualized in the map or in the plot. The
+column that holds the values to be visualized in the map or in the plot. The
 feature columns must hold numerical values.
 
 Second, we declare a visualizer object and provide as argument the dataframe described above:
@@ -128,17 +125,18 @@ trends -
 
 rank -
 
-# Documentation
+## Documentation
 
 Documentation is available here (to be discussed)
 
-# Authors
-- Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)
+## Authors
+
 - Sophie Manuel [sophie.manuel@etu.umontpellier.fr](mailto:sophie.manuel@etu.umontpellier.fr)
 - Ravahere Paint-Koui [ravahere.paint-koui@etu.umontpellier.fr](mailto:ravahere.paint-koui@etu.umontpellier.fr)
 - Seydou Sane [seydou.sane@etu.umontpellier.fr](mailto:seydou.sane@etu.umontpellier.fr)
+- Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)
 
-# License
+## License
 
 GNU General Public License v3
 

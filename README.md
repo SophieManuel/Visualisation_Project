@@ -9,7 +9,6 @@ https://bayespop.shinyapps.io/wpp2019explorer/
 Worldwide_statistics is about producing interactive graphs (such as maps, histograms..). The user can choose the desired year and indicators to display.
 
 ## The package
-*** 
 
 This is a python package providing a high-level API that simplifies the visualization of statistics about countries on a world map or in different types of plots.
 
@@ -94,7 +93,7 @@ Application is run in http://0.0.0.0:7890
 5. The web application provide buttons to download the plot in PDF or PNG
    formats for later use.
 
-# Task affectation
+## Task affectation
 
 write your name after the "-"
 

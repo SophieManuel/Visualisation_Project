@@ -92,24 +92,19 @@ Application is run in http://0.0.0.0:7890
 ## Task affectation
 
 
-For the time being, the work is organized as follows : 
+For the time being, the work is organized as follows :
 
-Data preprocessing and loading :
-   - Seydou
-The interactive choropleth map (design, features,...) : 
-   Anas
-   Rava
-The histogram/kde and sortable datatable
-   Sophie using the package `pandas`;  
-Heatmap : 
-   Anas
-Lineplot :
-   Anas
-Unit Testing
-Animation <name.s>;
-Documentation will be written by the team;  
-Beamer for the oral presentation will be done by the team.  
-Web app : Anas
+Data preprocessing and loading : Seydou
+
+* Interactive choropleth map (design, features,...) : Anas, Ravahere
+* Histogram/kde and sortable datatable Sophie using the package `pandas`
+* Heatmap : Anas
+* Lineplot : Anas
+* Animation : Seydou ,Sophie
+* Unit Testing by the team
+* Documentation will be written by the team;
+* Beamer for the oral presentation will be done by the team.
+* Web app : Anas
 
 
 ## Authors
@@ -137,7 +132,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
->>>>>>> dev
+
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 ```

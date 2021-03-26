@@ -94,8 +94,7 @@ Application is run in http://0.0.0.0:7890
 
 For the time being, the work is organized as follows :
 
-Data preprocessing and loading : Seydou
-
+* Data preprocessing and loading : Seydou
 * Interactive choropleth map (design, features,...) : Anas, Ravahere
 * Histogram/kde and sortable datatable Sophie using the package `pandas`
 * Heatmap : Anas

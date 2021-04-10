@@ -1,4 +1,4 @@
 # Documentation
 
-this subrepo will be used for documentation.
-main documentation will be using sphinx.
+This subrepo will be used for documentation.
+Main documentation will be using sphinx.

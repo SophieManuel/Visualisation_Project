@@ -14,6 +14,7 @@ This package is still WIP.
 
 To install the API, type:
 
+
 ```
 pip install wwstatviz
 ```
@@ -88,12 +89,32 @@ Application is run in http://0.0.0.0:7890
    formats for later use.
 
 
+## Task affectation
+
+
+For the time being, the work is organized as follows :
+
+* Data preprocessing and loading : Seydou
+* Interactive choropleth map (design, features,...) : Anas, Ravahere
+* Histogram/KDE and sortable datatable Sophie using the package `pandas`
+* Heatmap : Anas, Ravahere
+* Lineplot : Anas
+* Animation : Seydou, Sophie
+* Unit Testing by the team
+* Documentation will be written by the team
+* Beamer for the oral presentation will be done by the team
+* Web app : Depending on the project's evolution & deadlines, the package is expected to have a dedicated web app that will be implemented by the team members. We will use flask as a development framework
+
+
+
 ## Authors
 
-- Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)
 - Sophie Manuel [sophie.manuel@etu.umontpellier.fr](mailto:sophie.manuel@etu.umontpellier.fr)
 - Ravahere Paint-Koui [ravahere.paint-koui@etu.umontpellier.fr](mailto:ravahere.paint-koui@etu.umontpellier.fr)
 - Seydou Sane [seydou.sane@etu.umontpellier.fr](mailto:seydou.sane@etu.umontpellier.fr)
+- Anas Zakroum [anas.zakroum@etu.umontpellier.fr](mailto:anas.zakroum@etu.umontpellier.fr)
+
+*(sorted by last name)*
 
 ## License
 
@@ -115,4 +136,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 ```

@@ -1,0 +1,22 @@
+**French :**
+
+Plusieurs indicateurs sur une période de cinq ans, de 1950-1955 à 2095-2100.
+* TFR: Fertilité totale (naissances vivantes par femme)
+* NRR : Taux net de reproduction (filles survivantes par femme)
+* CBR : Taux brut de natalité (naissances pour 1 000 habitants)
+* Births: Nombre de naissances, les deux sexes combinés (milliers)
+* LEx: Espérance de vie à la naissance pour les deux sexes combinés (années)
+* LExMale: Espérance de vie masculine à la naissance (années)
+* LExFemale: Espérance de vie des femmes à la naissance (années)
+* DNI : Taux de mortalité infantile, q(1), pour les deux sexes combinés (décès infantiles pour 1 000 naissances vivantes)
+* Q5 : Mortalité des enfants de moins de cinq ans, 5q0, pour les deux sexes réunis (décès de moins de cinq ans pour 1 000 naissances vivantes)
+* CDR : Taux brut de mortalité (décès pour 1 000 habitants)
+* Deaths : Nombre de décès, les deux sexes confondus (milliers)
+* DeathsMale : Nombre de décès d’hommes (milliers)
+* DeathsFemale : Nombre de décès de femmes (milliers)
+* CNMR : Taux net de migration (pour 1 000 habitants)
+* NetMigrations : Nombre net de migrants, les deux sexes combinés (milliers)
+* Taux de croissance : Taux annuel moyen de changement de population (pourcentage)
+* NatIncr : Taux d’augmentation naturelle (pour 1 000 habitants)
+* SRB : Rapport entre les sexes à la naissance (naissances masculines par naissance féminine)
+* MAC : Âge moyen de la procréation (années)

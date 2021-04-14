@@ -11,7 +11,7 @@ url_db = [
 db = [
     "TotalPopulationBySex",
     "PopulationByAgeSex_Medium",
-    "Fertility_by_Age",
+    "FertilityByAge",
     "Period_Indicators_Medium",
     "Life_Table_Medium"
 ]

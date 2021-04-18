@@ -1,0 +1,1 @@
+from .coropleth import CoroplethGenerator

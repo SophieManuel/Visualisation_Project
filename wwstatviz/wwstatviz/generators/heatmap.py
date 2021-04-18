@@ -1,9 +1,31 @@
 from .generator import Generator
+import numpy as np
+from scipy.stats.stats import pearsonr, kendalltau, spearmanr
 
 class HeatmapGenerator(Generator):
 
-    def generate(self, countries = 'all', features = 'all'):
-        # checking arguments
+    def _compute_corr_matrix(self, indexes, columns, method):
+        methods = {
+            'pearson': pearsonr, 
+            'spearman': spearmanr, 
+            'kendall': kendalltau
+        }
+        corrf = methods[method]
+        df = self._data.loc[indexes, columns]
+        df_corr = pd.DataFrame(data = np.zeros((l, l)), 
+                               index = indexes, columns = indexes)
+        np.fill_diagonal(df_corr.values, 1.)
+        for i in range(len(indexes)):
+            for j in range(i + 1, len(indexes)):
+                x = df.loc[indexes[i]].values
+                y = df.loc[indexes[j]].values
+                corr, _ = corrf(x, y)
+                df_corr.loc[indexes[i], indexes[j]] = corr
+                df_corr.loc[indexes[j], indexes[i]] = corr
+        return df_corr
+
+    def generate(self, countries = 'all', features = 'all', method = 'pearson'):
+        ### checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -22,13 +44,13 @@ class HeatmapGenerator(Generator):
             for e in features:
                 if e not in self._data.columns.tolist():
                     raise ValueError(f'encountred invalid feature name: {e}')
-        # extracting data from self._data
+        # method
+        if method not in ['pearson', 'spearman', 'kendall']:
+            raise ValueError('unknown correlation method')
+        ### computing correlation
         idx = self._data.index.tolist() if countries == 'all' else countries
         cols = self._data.columns.tolist() if features == 'all' else features
-        df = self._data.loc[idx, cols]
-        # computing correlations
-        l = len(idx)
-        df_corr = pd.DataFrame(data = np.zeros((l, l)), 
-                               index = idx, columns = idx)
-        # TODO: compute correlations
+        df_corr = self._compute_corr_matrix(idx, cols, method)
+        ### generating heatmap
+        # TODO: use seaborn or matplotlib
         raise NotImplementedError

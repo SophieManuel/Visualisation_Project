@@ -1,7 +1,9 @@
 pytest
 pandas
 numpy
+scipy
 plotly
+seaborn
 matplotlib
 sphinx
 ipython

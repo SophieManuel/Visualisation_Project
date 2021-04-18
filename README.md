@@ -14,7 +14,6 @@ This package is still WIP.
 
 To install the API, type:
 
-
 ```
 pip install wwstatviz
 ```

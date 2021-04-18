@@ -1,15 +1,13 @@
 from setuptools import setup, find_packages
 
-
 def get_long_description():
     with open('README.md', 'r') as f:
         long_description = f.read()
     return long_description
 
-
 setup(
     name='wwstatviz',
-    version='0.1a',
+    version='0.1a0',
     license='License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
     description='A package for world wide statistics visualizer',
     package_dir={'': 'src'},

@@ -1,5 +1,5 @@
 from . import Reader
-from .iso import CC_2D
+from .iso import CC_2D, CC_3D
 import pandas as pd
 
 class CSVReader(Reader):
@@ -14,7 +14,9 @@ class CSVReader(Reader):
                          index_col = 0, 
                          sep = self._separator)
         # checking if dataframe indexes are valid country codes
-        for e in df.index.tolist():
-            if e not in CC_2D:
+        index = df.index.tolist()
+        ccs = CC_2D if len(index[0]) == 2 else CC_3D
+        for e in index:
+            if e not in ccs:
                 raise ValueError(f'unknown country code {e}')
         return df

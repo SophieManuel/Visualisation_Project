@@ -12,77 +12,10 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
 
-# ------------------------------------------------------------------------------
-# Import and clean data (importing csv into pandas)
-df = pd.read_csv(".csv")
+###################################################
+################### MY WORK #######################
+###################################################
 
-df = df.groupby(['State', 'ANSI', 'Affected by', 'Year', 'state_code'])[['Pct of Colonies Impacted']].mean()
-df.reset_index(inplace=True)
-print(df[:5])
-#%%
-# ------------------------------------------------------------------------------
-# App layout
-app.layout = html.Div([
-
-    html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'}),
-
-#créer dictionnaire des années = liste [{"label": "2015", "value": 2015}, {"label": "2015", "value": 2015}, ...]
-
-    dcc.Dropdown(id="slct_year",
-                 options=[
-                     {"label": "2015", "value": 2015},
-                     {"label": "2016", "value": 2016},
-                     {"label": "2017", "value": 2017},
-                     {"label": "2018", "value": 2018}],
-                 multi=False,
-                 value=2015,
-                 style={'width': "40%"}
-                 ),
-
-    html.Div(id='output_container', children=[]),
-    html.Br(),
-
-    dcc.Graph(id='my_bee_map', figure={})
-
-])
-
-#%%
-# ------------------------------------------------------------------------------
-# Connect the Plotly graphs with Dash Components
-@app.callback(
-    [Output(component_id='output_container', component_property='children'),
-     Output(component_id='my_bee_map', component_property='figure')],
-    [Input(component_id='slct_year', component_property='valYear'), 
-    Input(component_id='slct_indic', component_property='valIndic')]
-)
-def update_graph(option_slctd):
-    print(option_slctd)
-    print(type(option_slctd))
-
-
-    container = "Year chosen: {}".format(option_slctd)
-
-    dff = df.copy()
-    dff = dff[dff["Year"] == option_slctd]
-    dff = dff[dff["Affected by"] == "Varroa_mites"]
-
-    fig = px.bar(
-        data_frame=dff,
-        x='State',
-        y='Pct of Colonies Impacted',
-        hover_data=['State', 'Pct of Colonies Impacted'],
-        labels={'Pct of Colonies Impacted': '% of Bee Colonies'},
-        template='plotly_dark'
-    )
-
-    return container, fig
-
-# ------------------------------------------------------------------------------
-if __name__ == '__main__':
-    app.run_server(debug=True)
-
-
-####### MY WORK
 #%%
 
 import pandas as pd
@@ -91,6 +24,10 @@ import plotly.express as px  # (version 4.7.0)
 import dash  # (version 1.12.0) pip install dash
 import dash_core_components as dcc
 import dash_html_components as html
+
+import random #to fake a dataFrame
+import numpy as np
+
 
 from dash.dependencies import Input, Output
 
@@ -101,74 +38,125 @@ def colNames(dataFrame):
 
     colNames = dataFrame.columns
     dict = []
-    for k in colNames :
+    for k in colNames[2:] :
         #we create the new element of the dictionnary
         newElement = {"label":  str(k), "value": k}
         #adding it to the dict
         dict.append(newElement)
     return dict
 
+def yearsAvailable(df):
+
+    """ Years available  in the dataframe """
+
+    dfYear = df["Year"].unique()
+    dict = []
+    for k in dfYear :
+        #we create the new element of the dictionnary
+        newElement = {"label":  str(k), "value": k}
+        #adding it to the dict
+        dict.append(newElement)
+    return dict
+
+def dataframe(year):
+    """ Gets the datas related to a given year """
+    dfYear = df.groupby('Year')
+    dfYear.get_group(year)
+    return dfYear
 
 # %%
 
-df = pd.read_csv("./data/FertilityByAge.csv")
+#### CREATION OF A FAKE DATASETS TO TEST THE CODE
 
-#%%
+#df = pd.read_csv("../data/TotalPopBySex.csv")
+pays = [k for i in range(10) for k in ["FR", "EN", "USA", "CN", "IT", "AL"]]
+annee = [i for i in range(2000, 2010) for k in range(6)]
+
+ind1 = [random.randint(0, 2000) for i in range(60)]
+ind2 = [random.randint(0, 2000) for i in range(60)]
+ind3 = [random.randint(0, 2000) for i in range(60)]
+ind4 = [random.randint(0, 2000) for i in range(60)]
+ind5 = [random.randint(0, 2000) for i in range(60)]
+ind6 = [random.randint(0, 2000) for i in range(60)]
+
+M = np.array([pays, annee, ind1, ind2, ind3, ind4, ind5, ind6], order = 'F')
+df = pd.DataFrame(np.transpose(M))
+df.columns = ['Country', 'Year', 'Ind1', 'Ind2', 'Ind3', 'Ind4', 'Ind5', 'Ind6']
+
+
+# %%
 # ------------------------------------------------------------------------------
 # App layout
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
 
-    html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'}),
+    html.H1("Choropleth Map", style={'text-align': 'center'}),
 
-#créer dictionnaire des années = liste [{"label": "2015", "value": 2015}, {"label": "2015", "value": 2015}, ...]
-
-    dcc.Dropdown(id="slctIndic",
+    dcc.Dropdown(id="slct_indic",
                  options=colNames(df),
                  multi=False,
-                 value=2015,
+                 value = df.columns[2],
                  style={'width': "40%"}
                  ),
 
-    dcc.Dropdown(id="slctYear",
-                 options=[
-                     {"label": "2015", "value": 2015},
-                     {"label": "2016", "value": 2016},
-                     {"label": "2017", "value": 2017},
-                     {"label": "2018", "value": 2018}],
-                 multi=False,
-                 value=2015,
+                 html.Br(),
+
+    dcc.Dropdown(id="slct_year",
+                 options = yearsAvailable(df),
+                 multi=False, #on ne peut pas faire plusieurs choix
+                 value=2005,
                  style={'width': "40%"}
                  ),
 
     html.Div(id='output_container', children=[]),
+
     html.Br(),
 
-    dcc.Graph(id='my_bee_map', figure={})
+    dcc.Graph(id='myChoroMap', figure={})
 
 ])
 
 @app.callback(
-    [Output(component_id='output_container', component_property='children'),
-     Output(component_id='my_bee_map', component_property='figure')],
-    [Input(component_id='slctYear', component_property='valYear'), 
-    Input(component_id='slctIndic', component_property='valIndic')]
+    [Output(component_id='output_container', component_property='children'), 
+    Output(component_id='myChoroMap', component_property='figure')],
+    [Input(component_id='slct_year', component_property='value'), 
+    Input(component_id='slct_indic', component_property='value')]
 )
 
-def update_graph(valYear, valIndic):
-    print(valYear)
-    print(type(valIndic))
+def update_graph(slct_year, slct_indic):
+    #print(slct_year, slct_indic)
 
-    container = "The year chosen by user was: {}".format(valYear)
+    #print(type(slct_year, slct_indic))
 
-    return container, fig
+    container = "The year chosen by user was: {}".format(slct_year)
+    print(container)
+    dfYear = dataframe(slct_year)
+
+    fig = px.choropleth(
+        data_frame=dfYear,
+        locationmode='ISO-3',
+        locations='Country',
+        scope = 'world',
+        color = str(slct_indic),
+        hover_data=['Country', str(slct_indic)],
+        color_continuous_scale=px.colors.sequential.YlOrRd,
+        labels={slct_indic: 'personnes'},
+        template='plotly_dark'
+    )
+
+    #print(type(container), type(fig2))
+    return fig
+# %%
 
 #%%
 
-# ------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run_server(debug=False)
 
-
 # %%
+
+
+#%%
+
+

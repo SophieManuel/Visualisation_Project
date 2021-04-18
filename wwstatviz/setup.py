@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 def get_long_description():
-    with open('README.md', 'r') as f:
+    with open('/workspace/README.md', 'r') as f:
         long_description = f.read()
     return long_description
 

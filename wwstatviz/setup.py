@@ -9,7 +9,7 @@ def get_long_description():
 
 setup(
     name='wwstatviz',
-    version='0.1',
+    version='0.1a',
     license='License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
     description='A package for world wide statistics visualizer',
     package_dir={'': 'src'},

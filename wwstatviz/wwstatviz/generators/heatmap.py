@@ -1,6 +1,7 @@
 from .generator import Generator
 import numpy as np
 from scipy.stats.stats import pearsonr, kendalltau, spearmanr
+import seaborn as sns
 
 class HeatmapGenerator(Generator):
 
@@ -23,6 +24,14 @@ class HeatmapGenerator(Generator):
                 df_corr.loc[indexes[i], indexes[j]] = corr
                 df_corr.loc[indexes[j], indexes[i]] = corr
         return df_corr
+
+    def _heatmap(self, corr_matrix):
+        mask = np.zeros_like(corr)
+        mask[np.triu_indices_from(mask)] = True
+        with sns.axes_style("white"):
+            fig, ax = plt.subplots()
+            ax = sns.heatmap(corr, mask=mask, vmax=.3, square=True)
+        return fig
 
     def generate(self, countries = 'all', features = 'all', method = 'pearson'):
         ### checking arguments
@@ -53,4 +62,5 @@ class HeatmapGenerator(Generator):
         df_corr = self._compute_corr_matrix(idx, cols, method)
         ### generating heatmap
         # TODO: use seaborn or matplotlib
+        self._figure = self._heatmap(df_corr)
         raise NotImplementedError

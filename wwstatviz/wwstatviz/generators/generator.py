@@ -10,3 +10,7 @@ class Generator(object):
 
     def generate(self):
         raise NotImplementedError
+
+    @property
+    def figure(self):
+        return self._figure

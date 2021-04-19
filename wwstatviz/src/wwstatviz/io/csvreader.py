@@ -1,4 +1,4 @@
-from . import Reader
+from .reader import Reader
 from .iso import CC_2D, CC_3D
 import pandas as pd
 

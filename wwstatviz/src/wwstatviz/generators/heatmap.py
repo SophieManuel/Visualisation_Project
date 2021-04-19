@@ -1,7 +1,9 @@
-from .generator import Generator
 import numpy as np
+import pandas as pd
 from scipy.stats.stats import pearsonr, kendalltau, spearmanr
+import matplotlib.pyplot as plt
 import seaborn as sns
+from .generator import Generator
 
 class HeatmapGenerator(Generator):
 
@@ -46,6 +48,7 @@ class HeatmapGenerator(Generator):
         }
         corrf = methods[self._method]
         df = self._data.loc[indexes, columns]
+        l = len(indexes)
         df_corr = pd.DataFrame(data = np.zeros((l, l)), 
                                index = indexes, columns = indexes)
         np.fill_diagonal(df_corr.values, 1.)
@@ -67,10 +70,10 @@ class HeatmapGenerator(Generator):
         xticklabels = corr_matrix.index.tolist()
         yticklabels = corr_matrix.columns.tolist()
         fig, ax = plt.subplots()
-        ax = sns.heatmap(corr, mask = mask, square = True,
+        ax = sns.heatmap(corr_matrix, mask = mask, square = True,
                          vmin = -1., vmax = 1., center = 0., 
                          xticklabels = xticklabels, yticklabels = yticklabels,
-                         linewidths = 0.5, square = True)
+                         linewidths = 0.5)
         return fig
 
     def generate(self):

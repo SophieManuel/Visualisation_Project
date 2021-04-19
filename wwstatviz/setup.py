@@ -10,8 +10,8 @@ setup(
     version='0.1a0',
     license='License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
     description='A package for world wide statistics visualizer',
-    package_dir={'': 'wwstatviz'},
-    packages=find_packages(where='wwstatviz'),
+    package_dir={'': 'src'},
+    packages=find_packages(where='src'),
     classifiers=[
         # 'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

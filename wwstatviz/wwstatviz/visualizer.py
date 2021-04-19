@@ -1,6 +1,6 @@
 from pathlib import Path
 from .figure import Figure
-from .generators import HeatmapGenerator
+from .generators import HeatmapGenerator, CoroplethGenerator
 from .io import CSVReader
 
 class Visualizer(object):
@@ -18,5 +18,11 @@ class Visualizer(object):
                 method = 'pearson', mask = True):
         fig = Figure()
         generator = HeatmapGenerator(self._data, countries, features, method, mask)
+        fig.figure = generator.generate()
+        return fig
+
+    def map(self, feature, countries = 'all'):
+        fig = Figure()
+        generator = CoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
         return fig

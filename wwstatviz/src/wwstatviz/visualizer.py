@@ -30,9 +30,10 @@ class Visualizer(object):
         fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
         return fig
 
-    def line(self, countries = 'all', features = 'all'):
+    def line(self, countries = 'all', features = 'all', 
+             title = '', xlabel = '', ylabel = '', legend = False):
         fig = Figure()
-        generator = LineGenerator(self._data, countries, features)
+        generator = LineGenerator(self._data, countries, features, legend)
         fig.figure = generator.generate()
         fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
         return fig

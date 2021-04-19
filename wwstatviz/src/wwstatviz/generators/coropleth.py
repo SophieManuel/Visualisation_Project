@@ -23,4 +23,10 @@ class CoroplethGenerator(Generator):
         self._countries = countries
 
     def generate(self):
+        ### get data
+        if self._countries == 'all':
+            idx = self._data.index.tolist()
+        else:
+            idx = self._countries
+        df = self._data.loc[idx, self._feature]
         raise NotImplementedError

@@ -23,7 +23,8 @@ class Visualizer(object):
         fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
         return fig
 
-    def map(self, feature, countries = 'all'):
+    def coropleth(self, feature, countries = 'all', 
+                  title = '', xlabel = '', ylabel = ''):
         fig = Figure()
         generator = CoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()

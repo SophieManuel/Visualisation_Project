@@ -6,7 +6,7 @@ class Generator(object):
         if not isinstance(data, pd.DataFrame):
             raise ValueError('data argument must be a pandas dataframe')
         self._data = data
-        self._plot = None
+        self._figure = None
 
     def generate(self):
         raise NotImplementedError

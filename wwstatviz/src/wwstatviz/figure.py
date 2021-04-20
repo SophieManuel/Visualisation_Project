@@ -1,4 +1,5 @@
 import matplotlib
+import plotly
 import matplotlib.pyplot as plt
 
 class Figure(object):
@@ -17,6 +18,8 @@ class Figure(object):
         if isinstance(self.figure, matplotlib.figure.Figure):
             self.figure.tight_layout()
             self.figure.savefig(output_path)
+        if isinstance(self.figure, plotly.graph_objs._figure.Figure):
+            self.figure.write_image(file = output_path) 
     
     def annotate(self, title = '', xlabel = '', ylabel = ''):
         ### check args

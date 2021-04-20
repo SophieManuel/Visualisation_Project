@@ -1,4 +1,5 @@
 from .generator import Generator
+import plotly.graph_objects as go
 
 class CoroplethGenerator(Generator):
     
@@ -29,4 +30,18 @@ class CoroplethGenerator(Generator):
         else:
             idx = self._countries
         df = self._data.loc[idx, self._feature]
-        raise NotImplementedError
+        ### coropleth using plotly
+        # https://plotly.com/python/choropleth-maps/
+        fig = go.Figure(
+            data = go.Choropleth(
+                locations = df.index.tolist(),
+                z = df.values,
+                colorscale = 'Blues',
+                autocolorscale = False,
+                reversescale = True,
+                marker_line_color = 'darkgray',
+                marker_line_width = 0.5,
+            )
+        )
+        self._figure = fig
+        return self._figure

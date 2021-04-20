@@ -3,7 +3,9 @@ pandas
 numpy
 scipy
 plotly
+psutil
 seaborn
 matplotlib
 sphinx
 ipython
+kaleido

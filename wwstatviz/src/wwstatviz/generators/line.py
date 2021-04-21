@@ -1,3 +1,7 @@
+"""
+Line plot generator.
+"""
+
 import matplotlib.pyplot as plt
 from .generator import Generator
 import numpy as np

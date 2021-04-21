@@ -1,3 +1,7 @@
+"""
+Coropleth map generator.
+"""
+
 from .generator import Generator
 import plotly.graph_objects as go
 

@@ -1,3 +1,7 @@
+"""
+ISO 2-digit and 3-digit country codes for data file validations.
+"""
+
 CC_2D = [
     'AF', 'AX', 'AL', 'DZ', 'AS', 'AD', 'AO', 'AI', 'AQ', 'AG', 'AR', 'AM',
     'AW', 'AU', 'AT', 'AZ', 'BH', 'BS', 'BD', 'BB', 'BY', 'BE', 'BZ', 'BJ',

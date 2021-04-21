@@ -1,3 +1,7 @@
+"""
+Heatmap generator.
+"""
+
 import numpy as np
 import pandas as pd
 from scipy.stats.stats import pearsonr, kendalltau, spearmanr

@@ -1,3 +1,8 @@
+"""
+This module contains the Figure class returned by the Visualizer methods
+(heatmap, coropleth, etc.).
+"""
+
 import matplotlib
 import plotly
 import matplotlib.pyplot as plt
@@ -11,10 +16,22 @@ class Figure(object):
         self._ylabel = None
 
     def show(self):
+        """
+        Displays figure inline (to be used in web browsers for example).
+        """
         if isinstance(self._figure, Figure):
-            plt.show()
+            self._figure.show()
 
     def save(self, output_path):
+        """
+        Save the figure to a file. The format is inferred from the file 
+        extension.
+
+        Parameters
+        ----------
+        output_path : str
+            Path where to save the figure.
+        """
         if isinstance(self.figure, matplotlib.figure.Figure):
             self.figure.tight_layout()
             self.figure.savefig(output_path)

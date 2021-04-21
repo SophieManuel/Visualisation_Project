@@ -1,3 +1,9 @@
+"""
+This module contains the Generator base class.
+Any generator should inherit from the Generator class and must implement 
+a generate method.
+"""
+
 import pandas as pd
 
 class Generator(object):

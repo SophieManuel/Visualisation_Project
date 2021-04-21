@@ -1,3 +1,7 @@
+"""
+This module implements a CSV reader class to read CSV data file.
+"""
+
 from .reader import Reader
 from .iso import CC_2D, CC_3D
 import pandas as pd

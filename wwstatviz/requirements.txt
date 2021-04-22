@@ -1,12 +1,5 @@
 pytest
 pandas
 numpy
-scipy
 plotly
-psutil
-seaborn
 matplotlib
-sphinx
-sphinx-rtd-theme
-ipython
-kaleido

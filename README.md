@@ -14,6 +14,7 @@ This package is still WIP.
 
 To install the API, type:
 
+
 ```
 pip install wwstatviz
 ```
@@ -47,18 +48,19 @@ feature columns must hold numerical values.
 Second, we declare a visualizer object and provide as argument the dataframe described above:
 
 ```python
-from wwstatviz import Visualizer
-vis = Vizualizer('/path/to/data.csv')
+from wwstatviz.visual import Visualizer
+df = pd.read_csv('...')
+vis = Vizualizer(data = df)
 ```
 
 Third, we use the visualizer to generate plots:
 
 ```python
-# generate a choropleth map visualizing the values of feature_1 for all countries
-fig = vis.coropleth(feature = 'feature_1', countries = 'all') 
+# generate a choropleth map visualizing the values of feature_1
+vis.map(type = 'choropleth', feature = 'feature_1') 
 
-# to save generated figure
-fig.save('/path/to/figure.ext')
+# to generate scatter points map visualizing values of feature_3
+vis.map(type = 'scatter', feature = 'feature_3')
 
 # bar plot in which:
 # the x-axis contains the set of countries given in the argument "countries"
@@ -86,7 +88,9 @@ Application is run in http://0.0.0.0:7890
 5. The web application provide buttons to download the plot in PDF or PNG
    formats for later use.
 
+
 ## Task affectation
+
 
 For the time being, the work is organized as follows :
 
@@ -100,6 +104,8 @@ For the time being, the work is organized as follows :
 * Documentation will be written by the team
 * Beamer for the oral presentation will be done by the team
 * Web app : Depending on the project's evolution & deadlines, the package is expected to have a dedicated web app that will be implemented by the team members. We will use flask as a development framework
+
+
 
 ## Authors
 
@@ -130,5 +136,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 
 ```

@@ -7,6 +7,6 @@ def test_coropleth():
     fig = v.coropleth(feature = 'f1', countries = 'all', 
                       title = 'This is a test heatmap')
     assert fig.figure is not None
-    assert isinstance(fig.figure, plotly.graph_objs._figure.Figure)
+    assert isinstance(fig.figure, plotly.graph_objs.Figure)
     fig.save('test_coropleth.pdf')
     assert Path('test_coropleth.pdf').is_file()

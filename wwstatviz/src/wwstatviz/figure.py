@@ -35,7 +35,7 @@ class Figure(object):
         if isinstance(self.figure, matplotlib.figure.Figure):
             self.figure.tight_layout()
             self.figure.savefig(output_path)
-        if isinstance(self.figure, plotly.graph_objs._figure.Figure):
+        if isinstance(self.figure, plotly.graph_objs.Figure):
             self.figure.write_image(file = output_path) 
     
     def annotate(self, title = '', xlabel = '', ylabel = ''):

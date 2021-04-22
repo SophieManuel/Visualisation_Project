@@ -97,7 +97,7 @@ class Visualizer(object):
         fig = Figure()
         generator = CoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
-        fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
+        fig.annotate(title = title)
         return fig
 
     def line(self, countries = 'all', features = 'all', 

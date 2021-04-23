@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 def get_long_description():
-    with open('/workspace/README.md', 'r') as f:
+    with open('README.md', 'r') as f:
         long_description = f.read()
     return long_description
 
@@ -12,6 +12,16 @@ setup(
     description='A package for world wide statistics visualizer',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
+    install_requires = [
+        'kaleido==0.2.1',
+        'numpy==1.20.2',
+        'pandas==1.2.4',
+        'plotly==4.14.3',
+        'psutil==5.8.0',
+        'scipy==1.6.2',
+        'seaborn==0.11.1',
+        'matplotlib==3.4.1'
+    ],
     classifiers=[
         # 'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

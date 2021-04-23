@@ -1,0 +1,35 @@
+\begin{frame}
+  \frametitle{Introduction}
+  \framesubtitle{Motivation of this work}
+% there exist many python packages for generating plots such as matplotlib,
+% plotly, seaborn, etc.. However, the end user needs to read a long long
+% documentation to get used to it.
+
+% what about aggregating all of these packages into one simple "easy to use" 
+% package, a task-oriented package (i.e. to perform a specific task).
+
+% we choose as a proof-of-concept the task consisting of visualizing world wide
+% statistics.
+\end{frame}
+
+\begin{frame}[fragile,shrink=30]
+  \frametitle{Introduction}
+  \framesubtitle{Quick Example}
+ 
+  \begin{lstlisting}[language=Python,numbers=left]
+  from wwstatviz import Visualizer
+
+  v = Visualizer('/path/to/data.csv')
+  fig = v.choropleth(title = '...', 
+                     feature = 'GDP',
+                     countries = ['FRA', 'USA', 'AFG', ...])
+  fig.save('/path/to/output_file.png')
+  \end{lstlisting}
+
+  \begin{lstlisting}[language=Python,numbers=left]
+  fig = v.heatmap(title = '...',
+                  features = 'all',
+                  countries = ['ALG', 'GER', 'SEN', ...])
+  fig.show() # for inline display (in browsers for example)
+  \end{lstlisting}
+\end{frame}

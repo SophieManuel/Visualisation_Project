@@ -1,0 +1,102 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% font
+\usefonttheme{serif}
+
+% theme
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% colors
+\usecolortheme{beaver}
+\definecolor{myred}{HTML}{cc0000}
+\setbeamercolor{block body}{bg=black!5}
+\setbeamercolor{block title}{bg=black!10,fg=myred}
+
+% progress
+\AtBeginSection[]
+{
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+}
+% \AtBeginSubsection[]
+% {
+% \begin{frame}
+%   \frametitle{Outline}
+%   \tableofcontents[currentsubsection]
+% \end{frame}
+% }
+% \setbeamertemplate{footline}[frame number]
+
+% default graphics path
+\graphicspath{{inc/graphics/}}
+
+% listings config
+\lstdefinestyle{colored}{ %
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{white},
+  commentstyle=\color{green}\itshape,
+  keywordstyle=\color{blue}\bfseries\itshape,
+  stringstyle=\color{red},
+}
+\lstset{
+  aboveskip=1em,
+  breaklines=true,
+  abovecaptionskip=-6pt,
+  captionpos=b,
+  escapeinside={\%*}{*)},
+  frame=single,
+  numbers=left,
+  numbersep=15pt,
+  numberstyle=\tiny,
+  style=colored
+}
+
+% title page
+\title{Python Package for World Wide Statistics Visualization}
+\subtitle{}
+\author{\footnotesize{Name 1, Name 2, ...}}
+\date{\today}
+\institute{Université de Montpellier}
+
+%%%%%%%
+%%%%%%%
+%%%%%%%
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\small
+\begin{frame}[plain]
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+\normalsize
+
+\section{Introduction}
+\input{src/introduction.tex}
+
+\section{Package wwstatviz - API}
+\input{src/wwstatviz.tex}
+
+\section{Package wwstatviz-webapp - User Interface}
+\input{src/wwstatviz-webapp.tex}
+
+\section{Demo}
+\input{src/demo.tex}
+
+\section{Conclusion}
+\input{src/conclusion.tex}
+
+\end{document}

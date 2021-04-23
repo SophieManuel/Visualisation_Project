@@ -1,11 +1,11 @@
 """
-Coropleth map generator.
+Choropleth map generator.
 """
 
 from .generator import Generator
 import plotly.graph_objects as go
 
-class CoroplethGenerator(Generator):
+class ChoroplethGenerator(Generator):
     
     def __init__(self, data, feature, countries = 'all'):
         super().__init__(data)
@@ -34,7 +34,7 @@ class CoroplethGenerator(Generator):
         else:
             idx = self._countries
         df = self._data.loc[idx, self._feature]
-        ### coropleth using plotly
+        ### choropleth using plotly
         # https://plotly.com/python/choropleth-maps/
         fig = go.Figure(
             data = go.Choropleth(

@@ -5,7 +5,7 @@ generating plots.
 
 from pathlib import Path
 from .figure import Figure
-from .generators import HeatmapGenerator, CoroplethGenerator, LineGenerator
+from .generators import HeatmapGenerator, ChoroplethGenerator, LineGenerator
 from .io import CSVReader
 
 class Visualizer(object):
@@ -74,9 +74,9 @@ class Visualizer(object):
         fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
         return fig
 
-    def coropleth(self, feature, countries = 'all', title = ''): 
+    def choropleth(self, feature, countries = 'all', title = ''): 
         """
-        Generate a coropleth map. 
+        Generate a choropleth map. 
 
         Parameters
         ----------
@@ -86,16 +86,16 @@ class Visualizer(object):
         feature : str
             The name of the feature to show in the map.
         title : str
-            Coropleth title.
+            Choropleth title.
 
         Returns
         -------
         figure : Figure
-            A figure object containing the generated coropleth.
+            A figure object containing the generated choropleth.
         """
         fig = Figure()
         fig = Figure()
-        generator = CoroplethGenerator(self._data, feature, countries)
+        generator = ChoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
         fig.annotate(title = title)
         return fig

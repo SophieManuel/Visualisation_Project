@@ -5,7 +5,7 @@ generating plots.
 
 from pathlib import Path
 from .figure import Figure
-from .generators import HeatmapGenerator, ChoroplethGenerator, LineGenerator
+from .generators import HeatmapGenerator, CoroplethGenerator, LineGenerator, HistogramGenerator
 from .io import CSVReader
 
 
@@ -35,7 +35,7 @@ class Visualizer(object):
         self._data = reader.read()
 
     def heatmap(self, countries='all', features='all',
-                method='pearson', mask=True,
+                method='pearson', mask=True, 
                 title='', xlabel='', ylabel=''):
         """
         Construct a heatmap. Rows and columns of the heatmap represent the
@@ -76,9 +76,9 @@ class Visualizer(object):
         fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
         return fig
 
-    def choropleth(self, feature, countries='all', title=''):
+    def coropleth(self, feature, countries='all', title=''):
         """
-        Generate a choropleth map.
+        Generate a coropleth map.
 
         Parameters
         ----------
@@ -88,17 +88,17 @@ class Visualizer(object):
         feature : str
             The name of the feature to show in the map.
         title : str
-            Choropleth title.
+            Coropleth title.
 
         Returns
         -------
         figure : Figure
-            A figure object containing the generated choropleth.
+            A figure object containing the generated coropleth.
         """
         fig = Figure()
-        generator = ChoroplethGenerator(self._data, feature, countries)
+        generator = CoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
-        fig.annotate(title=title)
+        fig.annotate(title = title)
         return fig
 
     def line(self, countries='all', features='all',
@@ -133,4 +133,38 @@ class Visualizer(object):
         generator = LineGenerator(self._data, countries, features, legend)
         fig.figure = generator.generate()
         fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
+        return fig
+
+    def histogram(self, countries='all', features='all',
+                  title='', xlabel='', ylabel='', legend=False):
+        """
+        Generate a histogram plot.
+
+        Parameters
+        ----------
+        countries : str or array_like
+            List of country codes.
+            If passed value is 'all', then include all countries.
+        features : str or array_like
+            List of features to consider.
+            If passed value is 'all', then include all countries.
+        title : str
+            Histogram plot title
+        xlabel : str
+            Histogram plot x-coordinate label
+        ylabel : str
+            Histogram plot y-coordinate label
+        legend : bool
+            Whether or not to generate a legend for each histogram.
+            Default value: False
+
+        Returns
+        -------
+        figure : Figure
+            A figure object containing the generated histogram plot.
+        """
+        fig = Figure()
+        generator = HistogramGenerator(self._data, countries, features, legend)
+        fig.figure = generator.generate()
+        fig.annotate(title=title, xlabel=xlabel, ylabel=label)
         return fig

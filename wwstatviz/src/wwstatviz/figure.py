@@ -19,8 +19,10 @@ class Figure(object):
         """
         Displays figure inline (to be used in web browsers for example).
         """
-        if isinstance(self._figure, Figure):
-            self._figure.show()
+        if isinstance(self.figure, matplotlib.figure.Figure):
+            self.figure.show()
+        if isinstance(self.figure, plotly.graph_objs.Figure):
+            self.figure.show()
 
     def save(self, output_path):
         """

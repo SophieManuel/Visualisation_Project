@@ -94,7 +94,6 @@ class Visualizer(object):
             A figure object containing the generated choropleth.
         """
         fig = Figure()
-        fig = Figure()
         generator = ChoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
         fig.annotate(title = title)

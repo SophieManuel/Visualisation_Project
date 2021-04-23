@@ -2,6 +2,7 @@
   \frametitle{API}
 % it's a python package presenting an API for simple generation of
 % visualizatons
+% what is an API
 
 Available plots in the current state are:
 \begin{itemize}
@@ -40,12 +41,12 @@ wwstatviz
   \frametitle{The Visualizer Class}
   \framesubtitle{Input Data}
   
-  The constructor of the class take as input a data file \\
+  The constructor of the class takes as input a data file \\
   (in the CSV format):
   \begin{itemize}
     \item The first line must contain the header
     \item Each row must start with a country code (ISO-3166 2-digit or 3-digit)
-    \item The columns (i.e. the features) represent the data
+    \item The columns represent the features of the data
   \end{itemize}
   
   \vspace{5mm}
@@ -67,12 +68,12 @@ wwstatviz
   \framesubtitle{Main functions}
 
   \begin{itemize}
-    \item This Visualizer class is the main interface of the API.
-    \item The constructor (\_\_ini\_\_(self, data\_path)) takes as input 
-      the path to the data file
-    \item It contains functions for generating graphics (choropleth, histogram, etc.)
+    \item The Visualizer class is the main interface of the API (it orchastrates the differents tasks/actions).
+    \item The constructor (\_\_init\_\_(self, data\_path)) takes as input 
+      the path to the data file, and calls the corresponding reader from the ``io'' subpackage
+    \item It contains functions (methods) for generating graphics (choropleth, histogram, etc.)
     \item These function are simple calls to the Generators
-    \item Each function returns a Figure object (for later use)
+    \item Each function returns a Figure object (for later use, show()/save())
   \end{itemize}
 
 \end{frame}
@@ -85,7 +86,7 @@ wwstatviz
     \item Generators are responsible for producing plots.
     \item Each generator should inherit from the base class 
       ``Generator'' and must implement a ``generate()'' method
-    \item The generator contructor takes as argument the different options 
+    \item The generator constructor takes as argument the different options 
       to be used for generating the plots 
       (e.g. whether or not to draw a legend, the countries to use, etc.)
   \end{itemize}
@@ -111,7 +112,7 @@ wwstatviz
   \frametitle{Input/Output module}
   About the ``io'' module:
   \begin{itemize}
-    \item The io module is Responsible for:
+    \item The ``io'' module is responsible for:
       \begin{itemize}
         \item reading data files from disk for different 
           formats (csv, json, etc.) % json is not implemented yet

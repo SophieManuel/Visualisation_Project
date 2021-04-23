@@ -1,7 +1,5 @@
 pytest
-pandas
-numpy
-matplotlib
-plotly
+sphinx
+sphinx-rtd-theme
 flask
-#wwstatviz
+ipython

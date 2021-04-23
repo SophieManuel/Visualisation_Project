@@ -6,11 +6,12 @@ import matplotlib.pyplot as plt
 from .generator import Generator
 import numpy as np
 
+
 class LineGenerator(Generator):
 
-    def __init__(self, data, countries = 'all', features = 'all', legend = False):
+    def __init__(self, data, countries='all', features='all', legend=False):
         super().__init__(data)
-        ### checking arguments
+        # checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -37,7 +38,7 @@ class LineGenerator(Generator):
         self._legend = legend
 
     def generate(self):
-        ### get data
+        # get data
         if self._countries == 'all':
             idx = self._data.index.tolist()
         else:
@@ -47,7 +48,7 @@ class LineGenerator(Generator):
         else:
             cols = self._features
         df = self._data.loc[idx, cols]
-        ### generate line plots
+        # generate line plots
         fig = plt.figure()
         x = np.arange(len(cols))
         for i in idx:
@@ -55,6 +56,6 @@ class LineGenerator(Generator):
             plt.plot(x, y, '-')
         if self._legend:
             fig.legend(idx)
-        ### setting figure
+        # setting figure
         self._figure = fig
         return self._figure

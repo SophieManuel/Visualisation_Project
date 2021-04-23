@@ -5,11 +5,12 @@ Choropleth map generator.
 from .generator import Generator
 import plotly.graph_objects as go
 
+
 class ChoroplethGenerator(Generator):
-    
-    def __init__(self, data, feature, countries = 'all'):
+
+    def __init__(self, data, feature, countries='all'):
         super().__init__(data)
-        ### checking arguments
+        # checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -28,23 +29,23 @@ class ChoroplethGenerator(Generator):
         self._countries = countries
 
     def generate(self):
-        ### get data
+        # get data
         if self._countries == 'all':
             idx = self._data.index.tolist()
         else:
             idx = self._countries
         df = self._data.loc[idx, self._feature]
-        ### choropleth using plotly
+        # choropleth using plotly
         # https://plotly.com/python/choropleth-maps/
         fig = go.Figure(
-            data = go.Choropleth(
-                locations = df.index.tolist(),
-                z = df.values,
-                colorscale = 'Blues',
-                autocolorscale = False,
-                reversescale = True,
-                marker_line_color = 'darkgray',
-                marker_line_width = 0.5,
+            data=go.Choropleth(
+                locations=df.index.tolist(),
+                z=df.values,
+                colorscale='Blues',
+                autocolorscale=False,
+                reversescale=True,
+                marker_line_color='darkgray',
+                marker_line_width=0.5,
             )
         )
         self._figure = fig

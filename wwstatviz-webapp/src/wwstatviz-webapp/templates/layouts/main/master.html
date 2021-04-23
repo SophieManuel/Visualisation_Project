@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'lib/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'lib/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'lib/codehilite/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <title>{{ title or "World Wide Statistics Visualizer" }}</title>
+  </head>
+
+  <body>
+    
+    <div id="wrapper">
+      
+      <div id="header" class="container-fluid">
+        {% include 'layouts/main/_header.html' %}
+      </div>
+      
+      <div id="content" class="container mt-5 text-justify">
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+      <div id="footer" class="container-fluid">
+        {% include 'layouts/main/_footer.html' %}
+      </div>
+    
+    </div>
+  
+    <div id="js">
+      {% include 'layouts/main/_js.html' %}
+      {% block js %}
+      {% endblock %}
+    </div>
+  
+  </body>
+
+</html>

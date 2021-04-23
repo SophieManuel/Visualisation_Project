@@ -1,9 +1,11 @@
 from setuptools import setup, find_packages
 
+
 def get_long_description():
     with open('README.md', 'r') as f:
         long_description = f.read()
     return long_description
+
 
 setup(
     name='wwstatviz',
@@ -12,7 +14,7 @@ setup(
     description='A package for world wide statistics visualizer',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
-    install_requires = [
+    install_requires=[
         'kaleido==0.2.1',
         'numpy==1.20.2',
         'pandas==1.2.4',

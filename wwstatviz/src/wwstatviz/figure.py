@@ -7,8 +7,9 @@ import matplotlib
 import plotly
 import matplotlib.pyplot as plt
 
+
 class Figure(object):
-    
+
     def __init__(self):
         self.figure = None
         self._title = None
@@ -26,7 +27,7 @@ class Figure(object):
 
     def save(self, output_path):
         """
-        Save the figure to a file. The format is inferred from the file 
+        Save the figure to a file. The format is inferred from the file
         extension.
 
         Parameters
@@ -38,10 +39,10 @@ class Figure(object):
             self.figure.tight_layout()
             self.figure.savefig(output_path)
         if isinstance(self.figure, plotly.graph_objs.Figure):
-            self.figure.write_image(file = output_path) 
-    
-    def annotate(self, title = '', xlabel = '', ylabel = ''):
-        ### check args
+            self.figure.write_image(file=output_path)
+
+    def annotate(self, title='', xlabel='', ylabel=''):
+        # check args
         for arg in [title, xlabel, ylabel]:
             if not isinstance(arg, str):
                 raise ValueError(f'invalid argument {arg}')

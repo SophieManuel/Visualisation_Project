@@ -9,12 +9,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from .generator import Generator
 
+
 class HeatmapGenerator(Generator):
 
-    def __init__(self, data, countries = 'all', features = 'all', 
-                 method = 'pearson', mask = True):
+    def __init__(self, data, countries='all', features='all',
+                 method='pearson', mask=True):
         super().__init__(data)
-        ### checking arguments
+        # checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -46,15 +47,15 @@ class HeatmapGenerator(Generator):
 
     def _compute_corr_matrix(self, indexes, columns):
         methods = {
-            'pearson': pearsonr, 
-            'spearman': spearmanr, 
+            'pearson': pearsonr,
+            'spearman': spearmanr,
             'kendall': kendalltau
         }
         corrf = methods[self._method]
         df = self._data.loc[indexes, columns]
-        l = len(indexes)
-        df_corr = pd.DataFrame(data = np.zeros((l, l)), 
-                               index = indexes, columns = indexes)
+        length = len(indexes)
+        df_corr = pd.DataFrame(data=np.zeros((length, length)),
+                               index=indexes, columns=indexes)
         np.fill_diagonal(df_corr.values, 1.)
         for i in range(len(indexes)):
             for j in range(i + 1, len(indexes)):
@@ -74,14 +75,14 @@ class HeatmapGenerator(Generator):
         xticklabels = corr_matrix.index.tolist()
         yticklabels = corr_matrix.columns.tolist()
         fig, ax = plt.subplots()
-        ax = sns.heatmap(corr_matrix, mask = mask, square = True,
-                         vmin = -1., vmax = 1., center = 0., 
-                         xticklabels = xticklabels, yticklabels = yticklabels,
-                         linewidths = 0.5)
+        ax = sns.heatmap(corr_matrix, mask=mask, square=True,
+                         vmin=-1., vmax=1., center=0.,
+                         xticklabels=xticklabels, yticklabels=yticklabels,
+                         linewidths=0.5)
         return fig
 
     def generate(self):
-        ### computing correlation
+        # computing correlation
         if self._countries == 'all':
             idx = self._data.index.tolist()
         else:
@@ -91,6 +92,6 @@ class HeatmapGenerator(Generator):
         else:
             cols = self._features
         df_corr = self._compute_corr_matrix(idx, cols)
-        ### generating heatmap
+        # generating heatmap
         self._figure = self._heatmap(df_corr)
         return self._figure

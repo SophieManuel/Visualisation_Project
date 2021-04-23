@@ -1,0 +1,5 @@
+<ul class="nav justify-content-center font-weight-bold text-uppercase">
+  {% for e in menu %}
+  <li class="nav-item"><a href="{{ e['path'] }}" class="nav-link">{{ e['name'] }}</a></li>
+  {% endfor %}
+</ul>

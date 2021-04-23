@@ -8,6 +8,7 @@ from .figure import Figure
 from .generators import HeatmapGenerator, ChoroplethGenerator, LineGenerator
 from .io import CSVReader
 
+
 class Visualizer(object):
 
     def __init__(self, data_path):
@@ -19,7 +20,7 @@ class Visualizer(object):
         data_path : str
             The path to the CSV file containing data.
             The CSV file must have as an index column the 2-digit or 3-digit
-            ISO country codes. 
+            ISO country codes.
 
         Returns
         -------
@@ -28,14 +29,14 @@ class Visualizer(object):
         self._data_path = data_path
         path = Path(data_path).absolute()
         if path.suffix == '.csv':
-            reader = CSVReader(input_file = data_path)
+            reader = CSVReader(input_file=data_path)
         else:
             raise ValueError('unknown data format')
         self._data = reader.read()
 
-    def heatmap(self, countries = 'all', features = 'all', 
-                method = 'pearson', mask = True, 
-                title = '', xlabel = '', ylabel = ''):
+    def heatmap(self, countries='all', features='all',
+                method='pearson', mask=True,
+                title='', xlabel='', ylabel=''):
         """
         Construct a heatmap. Rows and columns of the heatmap represent the
         countries, and the coordinate (i, j) is represent the correlation
@@ -44,7 +45,7 @@ class Visualizer(object):
         Parameters
         ----------
         countries : str or array_like
-            List of country codes. 
+            List of country codes.
             If passed value is 'all', then include all countries.
         features : str or array_like
             List of features to consider.
@@ -69,19 +70,20 @@ class Visualizer(object):
             A figure object containing the generated heatmap.
         """
         fig = Figure()
-        generator = HeatmapGenerator(self._data, countries, features, method, mask)
+        generator = HeatmapGenerator(self._data, countries, features,
+                                     method, mask)
         fig.figure = generator.generate()
-        fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
+        fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
         return fig
 
-    def choropleth(self, feature, countries = 'all', title = ''): 
+    def choropleth(self, feature, countries='all', title=''):
         """
-        Generate a choropleth map. 
+        Generate a choropleth map.
 
         Parameters
         ----------
         countries : str or array_like
-            List of country codes. 
+            List of country codes.
             If passed value is 'all', then include all countries.
         feature : str
             The name of the feature to show in the map.
@@ -96,18 +98,18 @@ class Visualizer(object):
         fig = Figure()
         generator = ChoroplethGenerator(self._data, feature, countries)
         fig.figure = generator.generate()
-        fig.annotate(title = title)
+        fig.annotate(title=title)
         return fig
 
-    def line(self, countries = 'all', features = 'all', 
-             title = '', xlabel = '', ylabel = '', legend = False):
+    def line(self, countries='all', features='all',
+             title='', xlabel='', ylabel='', legend=False):
         """
         Generate a line plot (e.g. for time series visualization).
 
         Parameters
         ----------
         countries : str or array_like
-            List of country codes. 
+            List of country codes.
             If passed value is 'all', then include all countries.
         features : str or array_like
             List of features to consider.
@@ -130,5 +132,5 @@ class Visualizer(object):
         fig = Figure()
         generator = LineGenerator(self._data, countries, features, legend)
         fig.figure = generator.generate()
-        fig.annotate(title = title, xlabel = xlabel, ylabel = ylabel)
+        fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
         return fig

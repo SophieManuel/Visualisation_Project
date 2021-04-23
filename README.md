@@ -1,12 +1,12 @@
 # wwstatviz - World Wide Statistics Visualizer
 
-This is a python package providing a high-level API that simplifies 
-the visualization of statistics about countries on a world map or in different
-types of plots.
+This repository contains two python packages:
 
-Moreover, this package also includes a user-friendly web application that makes 
-use of the internal API to visualize statistics in a browser destined to
-regular (non-developer) end-users.
+- wwstatviz: provides a high-level API that simplifies the visualization of
+  statistics about countries on a world map or in different types of plots.
+- wwstatviz-webapp: provides a friendly user interface making use of wwstatviz
+  API for visualizing world wide statistics in a browser. It is destined to
+  regular (non-developer) end-users.
 
 This package is still WIP.
 
@@ -28,7 +28,7 @@ pip install wwstatviz-webapp
 
 wwstatviz logic is as follows:
 
-First, we define data in a pandas dataframe having the following specific format:
+First, we define data in a CSV file having the following specific format:
 
 |    | feature\_1   | feature\_2   | ... | feature\_N   |
 |----|:------------:|:------------:|-----|:------------:|
@@ -38,13 +38,14 @@ First, we define data in a pandas dataframe having the following specific format
 | .. |              |              | ... |              |
 | CO |     5.36     |     1820     | ... |       93     |
 
-The rows of the data frame must be indexed by the 
+The rows of the CSV data file must be indexed by the 
 [ISO country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) 
-(Alpha-2 or Alpha 3 code). The data frame should contain at least one feature
+(Alpha-2 or Alpha-3 codes). The data frame should contain at least one feature
 column that hold the values to be visualized in the map or in the plot. The
 feature columns must hold numerical values.
 
-Second, we declare a visualizer object and provide as argument the dataframe described above:
+Second, we declare a visualizer object and provide as argument the path to the
+data file described above:
 
 ```python
 from wwstatviz import Visualizer
@@ -99,7 +100,9 @@ For the time being, the work is organized as follows :
 * Unit Testing by the team
 * Documentation will be written by the team
 * Beamer for the oral presentation will be done by the team
-* Web app : Depending on the project's evolution & deadlines, the package is expected to have a dedicated web app that will be implemented by the team members. We will use flask as a development framework
+* Web app : Depending on the project's evolution & deadlines, the package is 
+  expected to have a dedicated web app that will be implemented by the team 
+  members. We will use flask as a development framework.
 
 ## Authors
 

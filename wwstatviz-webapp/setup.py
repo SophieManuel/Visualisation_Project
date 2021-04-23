@@ -1,19 +1,20 @@
 from setuptools import setup, find_packages
 
-
 def get_long_description():
-    with open('README.md', 'r') as f:
+    with open('/workspace/README.md', 'r') as f:
         long_description = f.read()
     return long_description
 
-
 setup(
     name='wwstatviz-webapp',
-    version='0.1',
+    version='0.1a0',
     license='License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    description='A package for world wide statistics visualizer',
+    description='A web app package for world wide statistics visualization',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
+    install_requires = [
+        'flask==1.1.2',
+    ]
     classifiers=[
         # 'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -27,5 +28,5 @@ setup(
     url='https://github.com/SophieManuel/Worldwide_statistics',
     author='Anas Zakroum, Sophie Manuel, Ravahere Paint-Koui, Seydou Sane',
     author_email='anaszkrm@protonmail.com',
-    keywords='country map visualization statistics data'
+    keywords='country map visualization statistics data web'
 )

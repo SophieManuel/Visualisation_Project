@@ -33,3 +33,17 @@ class HistogramGenerator(Generator):
         self._countries = countries
         self._features = features
         self._legend = legend
+
+    def generate(self):
+        # get data
+        if self._countries == 'all':
+            idx = self._data.index.tolist()
+        else:
+            idx = self._countries
+        if self._features == 'all':
+            cols = self._data.columns.tolist()
+        else:
+            cols = self._features
+        df = self._data.loc[idx, cols]
+	self._figure = self._histogram(df)
+        return self._figure

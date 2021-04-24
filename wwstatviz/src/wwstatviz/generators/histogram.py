@@ -37,7 +37,7 @@ class HistogramGenerator(Generator):
         self._legend = legend
 
     def _histogram(self, df, idx, cols):
-	width = 1. / (len(cols))
+	width = 1. / (len(cols) + 1.)
         x = np.arange(len(idx))
         fig = plt.figure()
         for j in cols:
@@ -45,7 +45,7 @@ class HistogramGenerator(Generator):
             plt.bar(x, h, width=width)
             x = x + width
         x = np.arange(len(idx))
-        x = x + (len(cols) / 2.) * width
+        x = x + (len(cols) / 2.) * width - width / 2.
         plt.xticks(ticks=x, labels=idx)
         if self._legend:
             fig.legend(cols)
@@ -62,5 +62,6 @@ class HistogramGenerator(Generator):
         else:
             cols = self._features
         df = self._data.loc[idx, cols]
+        # generate histogram plot
 	self._figure = self._histogram(df, idx, cols)
         return self._figure

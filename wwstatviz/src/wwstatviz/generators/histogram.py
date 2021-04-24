@@ -51,7 +51,7 @@ class HistogramGenerator(Generator):
         plt.xticks(ticks=x, labels=idx)
         if self._legend:
             fig.legend(cols)
-    return fig
+        return fig
 
     def generate(self):
         # get data

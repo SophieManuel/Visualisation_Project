@@ -76,7 +76,8 @@ class Visualizer(object):
         fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
         return fig
 
-    def choropleth(self, feature, countries='all', title=''):
+    def choropleth(self, feature, countries='all', 
+                   scale_feature=False, title=''):
         """
         Generate a choropleth map.
 
@@ -87,6 +88,8 @@ class Visualizer(object):
             If passed value is 'all', then include all countries.
         feature : str
             The name of the feature to show in the map.
+        scale_feature : bool
+            If True, apply a min-max scaler to the feature
         title : str
             Choropleth title.
 
@@ -96,7 +99,8 @@ class Visualizer(object):
             A figure object containing the generated choropleth.
         """
         fig = Figure()
-        generator = ChoroplethGenerator(self._data, feature, countries)
+        generator = ChoroplethGenerator(self._data, 
+                                        feature, countries, scale_feature)
         fig.figure = generator.generate()
         fig.annotate(title=title)
         return fig
@@ -168,3 +172,14 @@ class Visualizer(object):
         fig.figure = generator.generate()
         fig.annotate(title=title, xlabel=xlabel, ylabel=ylabel)
         return fig
+
+    def get_features(self):
+        """
+        Returns the list of features (columns) of the data set
+
+        Returns
+        -------
+        feature : list
+            A list containing the feature names present in the data
+        """
+        return self._data.columns.tolist()

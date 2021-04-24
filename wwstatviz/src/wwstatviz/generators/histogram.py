@@ -2,15 +2,17 @@
 Histogram plot generator.
 """
 
+
 from .generator import Generator
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 class HistogramGenerator(Generator):
 
     def __init__(self, data, countries='all', features='all', legend=False):
         super().__init__(data)
-        ### checking arguments
+        # checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -37,7 +39,7 @@ class HistogramGenerator(Generator):
         self._legend = legend
 
     def _histogram(self, df, idx, cols):
-	width = 1. / (len(cols) + 1.)
+        width = 1. / (len(cols) + 1.)
         x = np.arange(len(idx))
         fig = plt.figure()
         for j in cols:
@@ -49,7 +51,7 @@ class HistogramGenerator(Generator):
         plt.xticks(ticks=x, labels=idx)
         if self._legend:
             fig.legend(cols)
-	return fig
+    return fig
 
     def generate(self):
         # get data
@@ -63,5 +65,5 @@ class HistogramGenerator(Generator):
             cols = self._features
         df = self._data.loc[idx, cols]
         # generate histogram plot
-	self._figure = self._histogram(df, idx, cols)
+        self._figure = self._histogram(df, idx, cols)
         return self._figure

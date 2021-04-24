@@ -52,8 +52,7 @@ CC_3D = [
     'TWN', 'TWN', 'TJK', 'TZA', 'THA', 'TLS', 'TGO', 'TKL', 'TON', 'TTO',
     'TTO', 'TUN', 'TUR', 'TKM', 'TCA', 'TUV', 'UGA', 'UKR', 'ARE', 'GBR',
     'USA', 'UMI', 'URY', 'UZB', 'VUT', 'VEN', 'VEN', 'VNM', 'VNM', 'VGB',
-    'VIR', 'WLF', 'ESH', 'YEM', 'ZMB', 'ZWE', 'CHI', 'CUW', 'XKX', 'SXM',
-    'SSD', 'MAF'
+    'VIR', 'WLF', 'ESH', 'YEM', 'ZMB', 'ZWE',
 ]
 
 CC_NAMES = {

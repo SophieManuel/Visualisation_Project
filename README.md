@@ -1,3 +1,5 @@
+[![github-actions](https://github.com/sophiemanuel/wwstatviz/workflows/tests/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
+
 # wwstatviz - World Wide Statistics Visualizer
 
 This repository contains two python packages:

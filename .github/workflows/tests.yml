@@ -28,4 +28,5 @@ jobs:
         pip install -e wwstatviz
     - name: Test with pytest
       run: |
+        cd wwstatviz/
         pytest

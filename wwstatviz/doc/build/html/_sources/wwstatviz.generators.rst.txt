@@ -4,10 +4,10 @@ wwstatviz.generators package
 Submodules
 ----------
 
-wwstatviz.generators.coropleth module
--------------------------------------
+wwstatviz.generators.choropleth module
+--------------------------------------
 
-.. automodule:: wwstatviz.generators.coropleth
+.. automodule:: wwstatviz.generators.choropleth
    :members:
    :undoc-members:
    :show-inheritance:

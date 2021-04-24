@@ -12,17 +12,20 @@ This package is still WIP.
 
 ## Installation
 
-To install the API, type:
+To install the API from the git repository directly:
 
 ```
-pip install wwstatviz
+pip install "git+https://github.com/sophiemanuel/wwstatviz.git#egg=wwstatviz&subdirectory=wwstatviz"
 ```
 
 To install the web application:
 
 ```
-pip install wwstatviz-webapp
+pip install "git+https://github.com/sophiemanuel/wwstatviz.git#egg=wwstatviz-webapp&subdirectory=wwstatviz-webapp"
 ```
+
+The web application is still in early stage active development, so the 
+installation may fail.
 
 ## API Usage
 
@@ -40,7 +43,7 @@ First, we define data in a CSV file having the following specific format:
 
 The rows of the CSV data file must be indexed by the 
 [ISO country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) 
-(Alpha-2 or Alpha-3 codes). The data frame should contain at least one feature
+(Alpha-2 or Alpha-3 codes). The data file should contain at least one feature
 column that hold the values to be visualized in the map or in the plot. The
 feature columns must hold numerical values.
 
@@ -64,11 +67,11 @@ fig.save('/path/to/figure.ext')
 # bar plot in which:
 # the x-axis contains the set of countries given in the argument "countries"
 # the y-axis contains the bars of the features given in the argument "features"
-vis.bar(features = ['feature_1', 'feature_3'], countries = ['FR', 'US'])
+vis.histogram(features = ['feature_1', 'feature_3'], countries = ['FR', 'US'])
 ```
 
-For more information about possible plots, you can refer to the 
-[API documentation](#).
+For more information about plotting, you can refer to the 
+[API documentation](wwstatviz/doc/build/html/index.html).
 
 ## Web Application Usage
 
@@ -133,5 +136,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 ```

@@ -16,6 +16,7 @@ The used data set in `covid19.csv` file.
 ```bash
 pip install opencv-python
 pip install imageio
+pip install wwstatviz
 
 apt-get install ffmpeg libsm6 libxext6
 ```

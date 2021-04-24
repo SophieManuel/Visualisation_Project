@@ -178,7 +178,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="wwstatviz.generators.html">wwstatviz.generators package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#module-wwstatviz.generators.coropleth">wwstatviz.generators.coropleth module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#module-wwstatviz.generators.choropleth">wwstatviz.generators.choropleth module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#module-wwstatviz.generators.generator">wwstatviz.generators.generator module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#module-wwstatviz.generators.heatmap">wwstatviz.generators.heatmap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wwstatviz.generators.html#module-wwstatviz.generators.line">wwstatviz.generators.line module</a></li>
@@ -243,23 +243,38 @@ generating plots.</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wwstatviz.visualizer.</span></code><code class="sig-name descname"><span class="pre">Visualizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wwstatviz.visualizer.Visualizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt id="wwstatviz.visualizer.Visualizer.coropleth">
-<code class="sig-name descname"><span class="pre">coropleth</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wwstatviz.visualizer.Visualizer.coropleth" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a coropleth map.</p>
+<dt id="wwstatviz.visualizer.Visualizer.choropleth">
+<code class="sig-name descname"><span class="pre">choropleth</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wwstatviz.visualizer.Visualizer.choropleth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a choropleth map.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>countries</strong> (<em>str</em><em> or </em><em>array_like</em>) – List of country codes.
 If passed value is ‘all’, then include all countries.</p></li>
 <li><p><strong>feature</strong> (<em>str</em>) – The name of the feature to show in the map.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – Coropleth title.</p></li>
+<li><p><strong>scale_feature</strong> (<em>bool</em>) – If True, apply a min-max scaler to the feature</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Choropleth title.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>figure</strong> – A figure object containing the generated coropleth.</p>
+<dd class="field-even"><p><strong>figure</strong> – A figure object containing the generated choropleth.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#wwstatviz.figure.Figure" title="wwstatviz.figure.Figure">Figure</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wwstatviz.visualizer.Visualizer.get_features">
+<code class="sig-name descname"><span class="pre">get_features</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wwstatviz.visualizer.Visualizer.get_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of features (columns) of the data set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>feature</strong> – A list containing the feature names present in the data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -289,6 +304,33 @@ Default: False</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>figure</strong> – A figure object containing the generated heatmap.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#wwstatviz.figure.Figure" title="wwstatviz.figure.Figure">Figure</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wwstatviz.visualizer.Visualizer.histogram">
+<code class="sig-name descname"><span class="pre">histogram</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wwstatviz.visualizer.Visualizer.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a histogram plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>countries</strong> (<em>str</em><em> or </em><em>array_like</em>) – List of country codes.
+If passed value is ‘all’, then include all countries.</p></li>
+<li><p><strong>features</strong> (<em>str</em><em> or </em><em>array_like</em>) – List of features to consider.
+If passed value is ‘all’, then include all countries.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Histogram plot title</p></li>
+<li><p><strong>xlabel</strong> (<em>str</em>) – Histogram plot x-coordinate label</p></li>
+<li><p><strong>ylabel</strong> (<em>str</em>) – Histogram plot y-coordinate label</p></li>
+<li><p><strong>legend</strong> (<em>bool</em>) – Whether or not to generate a legend for each histogram.
+Default value: False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>figure</strong> – A figure object containing the generated histogram plot.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#wwstatviz.figure.Figure" title="wwstatviz.figure.Figure">Figure</a></p>

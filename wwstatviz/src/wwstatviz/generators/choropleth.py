@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 class ChoroplethGenerator(Generator):
 
-    def __init__(self, data, feature, countries='all'):
+    def __init__(self, data, feature, countries='all', scale_feature=False):
         super().__init__(data)
         # checking arguments
         # countries
@@ -25,8 +25,12 @@ class ChoroplethGenerator(Generator):
             raise ValueError('invalid feature argument')
         if feature not in data.columns.tolist():
             raise ValueError('invalid feature argument')
+        # scale_feature
+        if not isinstance(scale_feature, bool):
+            raise ValueError('invalid scale_feature argument')
         self._feature = feature
         self._countries = countries
+        self._scale_feature = scale_feature
 
     def generate(self):
         # get data
@@ -35,13 +39,21 @@ class ChoroplethGenerator(Generator):
         else:
             idx = self._countries
         df = self._data.loc[idx, self._feature]
+        if self._scale_feature:
+            mini, maxi = df.min(), df.max()
+            df = (df - mini) / maxi
+            zmax, zmin = 1., 0.
+        else:
+            zmax, zmin = None, None
         # choropleth using plotly
         # https://plotly.com/python/choropleth-maps/
         fig = go.Figure(
             data=go.Choropleth(
                 locations=df.index.tolist(),
                 z=df.values,
-                colorscale='Blues',
+                zmax=zmax,
+                zmin=zmin,
+                colorscale='hot',
                 autocolorscale=False,
                 reversescale=True,
                 marker_line_color='darkgray',

@@ -1,4 +1,4 @@
-[![github-actions](https://github.com/sophiemanuel/wwstatviz/workflows/tests/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
+![testing](https://github.com/sophiemanuel/wwstatviz/actions/workflows/tests.yml/badge.svg)
 
 # wwstatviz - World Wide Statistics Visualizer
 

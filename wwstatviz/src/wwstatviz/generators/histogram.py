@@ -3,6 +3,8 @@ Histogram plot generator.
 """
 
 from .generator import Generator
+import numpy as np
+import matplotlib.pyplot as plt
 
 class HistogramGenerator(Generator):
 
@@ -34,6 +36,21 @@ class HistogramGenerator(Generator):
         self._features = features
         self._legend = legend
 
+    def _histogram(self, df, idx, cols):
+	width = 1. / (len(cols))
+        x = np.arange(len(idx))
+        fig = plt.figure()
+        for j in cols:
+            h = df[j].values
+            plt.bar(x, h, width=width)
+            x = x + width
+        x = np.arange(len(idx))
+        x = x + (len(cols) / 2.) * width
+        plt.xticks(ticks=x, labels=idx)
+        if self._legend:
+            fig.legend(cols)
+	return fig
+
     def generate(self):
         # get data
         if self._countries == 'all':
@@ -45,5 +62,5 @@ class HistogramGenerator(Generator):
         else:
             cols = self._features
         df = self._data.loc[idx, cols]
-	self._figure = self._histogram(df)
+	self._figure = self._histogram(df, idx, cols)
         return self._figure

@@ -11,5 +11,5 @@ def test_line_plot():
                  legend=True)
     assert fig.figure is not None
     assert isinstance(fig.figure, matplotlib.figure.Figure)
-    fig.save('test_line_plot.png')
-    assert Path('test_line_plot.png').is_file()
+    fig.save('tests/test_line_plot.png')
+    assert Path('tests/test_line_plot.png').is_file()

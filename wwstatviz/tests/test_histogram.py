@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_histogram_plot():
-    v = Visualizer('/workspace/data/test_cc_2d.csv')
+    v = Visualizer('data/test_cc_3d.csv')
     fig = v.histogram(title='This is a test of line plot',
                       xlabel='Label of x axis',
                       ylabel='Label of y axis',

@@ -6,7 +6,7 @@ This repository contains two python packages:
 
 - wwstatviz: provides a high-level API that simplifies the visualization of
   statistics about countries on a world map or in different types of plots.
-- wwstatviz-webapp: provides a friendly user interface making use of wwstatviz
+- wwstatviz-webapp: provides a user friendly interface making use of wwstatviz
   API for visualizing world wide statistics in a browser. It is destined to
   regular (non-developer) end-users.
 
@@ -54,14 +54,14 @@ data file described above:
 
 ```python
 from wwstatviz import Visualizer
-vis = Vizualizer('/path/to/data.csv')
+vis = Visualizer('/path/to/data.csv')
 ```
 
 Third, we use the visualizer to generate plots:
 
 ```python
-# generate a choropleth map visualizing the values of feature_1 for all countries
-fig = vis.coropleth(feature = 'feature_1', countries = 'all') 
+# generates a choropleth map visualizing the values of feature_1 for all countries
+fig = vis.choropleth(feature = 'feature_1', countries = 'all') 
 
 # to save generated figure
 fig.save('/path/to/figure.ext')
@@ -89,7 +89,7 @@ Application is run in http://0.0.0.0:7890
 4. Select the features to visualize in the appropriate menu.
 4. In the left menu, select the type of visualization to plot (you can filter
    by country).
-5. The web application provide buttons to download the plot in PDF or PNG
+5. The web application provides buttons to download the plot in PDF or PNG
    formats for later use.
 
 ## Task affectation

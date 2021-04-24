@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_choropleth():
-    v = Visualizer('/workspace/data/test_cc_3d.csv')
+    v = Visualizer('data/test_cc_3d.csv')
     fig = v.choropleth(feature='f1', countries='all',
                        title='This is a test choropleth')
     assert fig.figure is not None

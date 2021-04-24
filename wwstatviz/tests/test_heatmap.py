@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_heatmap():
-    v = Visualizer('/workspace/data/test_cc_3d.csv')
+    v = Visualizer('data/test_cc_3d.csv')
     fig = v.heatmap(title='This is a test heatmap',
                     xlabel='Countries', ylabel='Countries')
     assert fig.figure is not None

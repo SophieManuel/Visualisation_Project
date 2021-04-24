@@ -27,5 +27,5 @@ jobs:
         if [ -f wwstatviz/requirements.txt ]; then pip install -r wwstatviz/requirements.txt; fi
     - name: Test with pytest
       run: |
-        cd wwstatviz/tests/
+        cd tests/
         pytest

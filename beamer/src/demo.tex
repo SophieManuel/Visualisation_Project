@@ -1,59 +1,56 @@
-\begin{frame}
-  \frametitle{Choropleth}/Users/ravahere/Documents/S5_M1MIND/MIND_S2/wwstatviz/beamer/src/demo.tex
-
-  \begin{lstlisting}[language=Python,numbers=left]
-  v = Visualizer('path/to/file.csv')
-  fig = v.choropleth(title = '...',
+\begin{frame}[fragile,shrink=30]
+   \frametitle{Choropleth}
+   \begin{lstlisting}[language=Python]
+    v = Visualizer('path/to/file.csv')
+    fig = v.choropleth(title = '...',
                   features = 'all',
                   countries = 'all')
-  fig.show() # for inline display (in browsers for example)
-  \end{lstlisting}
-
-  \includegraphics[scale=0.4]{../inc/graphics/choropleth.png}
-  
+    fig.show() # for inline display (in browsers for example)
+    \end{lstlisting}
+    \begin{center}
+        \includegraphics[scale=0.4]{beamer/inc/graphics/choropleth.png} 
+    \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile,shrink=30]
   \frametitle{Heatmap}
-
-  \begin{lstlisting}[language=Python,numbers=left]
+  \begin{lstlisting}[language=Python]
   v = Visualizer('path/to/file.csv')
   fig = v.heatmap(countries='all', features='all',
-                  method='pearson', mask=True,
-                  title='', xlabel='', ylabel='')
-  fig.show() # for inline display (in browsers for example)
+                    method='pearson', mask=True,
+                    title='', xlabel='', ylabel='')
+  fig.show() #for inline display (in browsers for example)
   \end{lstlisting}
-  
-  \includegraphics[scale=0.4]{../inc/graphics/heatmap.png}
-
+  \begin{center}
+    \includegraphics[scale=0.6]{beamer/inc/graphics/heatmap.png}
+    \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile,shrink=30]
   \frametitle{Time Series Plot}
-
-  \begin{lstlisting}[language=Python,numbers=left]
-  v = Visualizer('path/to/file.csv')
-  fig = v.line(countries='all', features='all',
+  \begin{lstlisting}[language=Python]
+    v = Visualizer('path/to/file.csv')
+    fig = v.line(countries='all', features='all',
               title='', xlabel='', ylabel='', 
               legend=False)
-  fig.show() # for inline display (in browsers for example)
-  \end{lstlisting}
-  
-  \includegraphics[scale=0.4]{../inc/graphics/line.png}
-
+    fig.show() # for inline display (in browsers for example)
+      \end{lstlisting}
+    \begin{center}
+    \includegraphics[scale=0.6]{beamer/inc/graphics/line.png}
+    \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile,shrink=30]
   \frametitle{Histogram}
-
-  \begin{lstlisting}[language=Python,numbers=left]
-  v = Visualizer('path/to/file.csv')
-  fig = v.histogram(countries='all', features='all',
+    \begin{lstlisting}[language=Python]
+    v = Visualizer('path/to/file.csv')
+    fig = v.histogram(countries='all', features='all',
                     title='', xlabel='', ylabel='', 
                     legend=False)
-  fig.show() # for inline display (in browsers for example)
-  \end{lstlisting}
-  
-  \includegraphics[scale=0.4]{../inc/graphics/histogram.png}
-
+    fig.show() # for inline display (in browsers for example)
+    \end{lstlisting}
+    \begin{center}
+    \includegraphics[scale=0.6]{beamer/inc/graphics/histogram.png}
+    \end{center}
 \end{frame}
+

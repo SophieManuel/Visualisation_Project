@@ -2,16 +2,17 @@
 Histogram plot generator.
 """
 
-import matplotlib.pyplot as plt
+
 from .generator import Generator
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class HistogramGenerator(Generator):
 
     def __init__(self, data, countries='all', features='all', legend=False):
         super().__init__(data)
-        ### checking arguments
+        # checking arguments
         # countries
         if not isinstance(countries, str) and not isinstance(countries, list):
             raise ValueError('invalid countries argument')
@@ -37,18 +38,7 @@ class HistogramGenerator(Generator):
         self._features = features
         self._legend = legend
 
-    def generate(self):
-        # get data
-        if self._countries == 'all':
-            idx = self._data.index.tolist()
-        else:
-            idx = self._countries
-        if self._features == 'all':
-            cols = self._data.columns.tolist()
-        else:
-            cols = self._features
-        df = self._data.loc[idx, cols]
-        # generate line plots
+    def _histogram(self, df, idx, cols):
         width = 1. / (len(cols) + 1.)
         x = np.arange(len(idx))
         fig = plt.figure()
@@ -61,6 +51,19 @@ class HistogramGenerator(Generator):
         plt.xticks(ticks=x, labels=idx)
         if self._legend:
             fig.legend(cols)
-        # setting figure
-        self._figure = fig
+        return fig
+
+    def generate(self):
+        # get data
+        if self._countries == 'all':
+            idx = self._data.index.tolist()
+        else:
+            idx = self._countries
+        if self._features == 'all':
+            cols = self._data.columns.tolist()
+        else:
+            cols = self._features
+        df = self._data.loc[idx, cols]
+        # generate histogram plot
+        self._figure = self._histogram(df, idx, cols)
         return self._figure

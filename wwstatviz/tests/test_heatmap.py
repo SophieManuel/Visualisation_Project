@@ -9,5 +9,5 @@ def test_heatmap():
                     xlabel='Countries', ylabel='Countries')
     assert fig.figure is not None
     assert isinstance(fig.figure, matplotlib.figure.Figure)
-    fig.save('test_heatmap.png')
-    assert Path('test_heatmap.png').is_file()
+    fig.save('tests/test_heatmap.png')
+    assert Path('tests/test_heatmap.png').is_file()

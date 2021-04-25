@@ -93,13 +93,23 @@ Application is run in http://0.0.0.0:7890
 5. The web application provides buttons to download the plot in PDF or PNG
    formats for later use.
 
+## Animation
+
+Here are exemples of animation we can produce with the package. 
+This animation is the evolution of mondial population from 1960 to 2019.
+[<img src="movie/Tot_Pop.gif" height="500">]()
+
+And here is animation the evolution of Covid's death number for one year.
+[<img src="movie/Covid_evol_1year.gif" height="500">]()
+
+
 ## Task affectation
 
 For the time being, the work is organized as follows :
 
 * Data preprocessing and loading : Seydou
 * Interactive choropleth map (design, features,...) : Anas, Ravahere
-* Histogram/KDE and sortable datatable Sophie using the package `pandas`
+* Histogram Sophie using the package `pandas`
 * Heatmap : Anas, Ravahere
 * Lineplot : Anas
 * Animation : Seydou, Sophie

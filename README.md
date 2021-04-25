@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+[![testing](https://github.com/sophiemanuel/wwstatviz/actions/workflows/tests.yml/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
+=======
 [![tests](https://github.com/sophiemanuel/wwstatviz/actions/workflows/tests.yml/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
 [![pep8](https://github.com/sophiemanuel/wwstatviz/actions/workflows/pep8.yml/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
+>>>>>>> 9db9bf7b6ff1dc775be7ec8b46f67b082d605ef6
 
 # wwstatviz - World Wide Statistics Visualizer
 

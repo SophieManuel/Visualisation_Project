@@ -3,7 +3,7 @@
   % facilitate the usage for non-developer end-users
   % what it does, see readme
   % it is intuitive
-  % As a backend, it uses a minimalistic and efficient python web frameword: flask
+  % As a backend, it uses a minimalistic and efficient python web framework: flask
   % it's in active development
 \end{frame}
 
@@ -12,4 +12,25 @@
   % search the internet and explain the concept here
   % put a simple example of code (the one they provide in the quickstart of the
   % doc)
+
+  \begin{itemize}
+    \item micro web framework for Python;
+    \item handy to launch small applications or web page
+  \end{itemize}
+
+The following code aims at displaying "Hello World!" on a web page: 
+
+  \begin{lstlisting}[language=Python,numbers=left]
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def hello():
+        return "Hello World"
+
+
+    if __name__ == "__main__":
+        app.run(debug=False)
+  \end{lstlisting}
+
 \end{frame}

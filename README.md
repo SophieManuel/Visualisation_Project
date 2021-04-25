@@ -1,6 +1,7 @@
 [![tests](https://github.com/sophiemanuel/wwstatviz/actions/workflows/tests.yml/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
 [![pep8](https://github.com/sophiemanuel/wwstatviz/actions/workflows/pep8.yml/badge.svg)](https://github.com/sophiemanuel/wwstatviz/actions)
 
+link to the presentation video : https://vimeo.com/541397636
 # wwstatviz - World Wide Statistics Visualizer
 
 This repository contains two python packages:

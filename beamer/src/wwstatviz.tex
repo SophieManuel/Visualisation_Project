@@ -6,10 +6,10 @@
 
 Available plots in the current state are:
 \begin{itemize}
-  \item choropleth: ...
-  \item heatmap: ...
-  \item line plot: ... for time series visualization
-  \item histogram: ...
+  \item choropleth: provides an easy way to visualize how an indicator varies accross a region;
+  \item heatmap: used to visualize how correlated are variables;
+  \item line plot: represents the time evolution of an indicator;
+  \item histogram: plots the values of given indicators by country.
 \end{itemize}
 % It's in active development, we will extend it to more widgets in the future
 \end{frame}
@@ -68,11 +68,11 @@ wwstatviz
   \framesubtitle{Main functions}
 
   \begin{itemize}
-    \item The Visualizer class is the main interface of the API (it orchastrates the differents tasks/actions).
-    \item The constructor (\_\_init\_\_(self, data\_path)) takes as input 
+    \item The Visualizer class is the main interface of the API (it orchestrates the different tasks/actions).
+    \item The constructor (\_\_init\_\_(self, data\_path)) takes as inputs 
       the path to the data file, and calls the corresponding reader from the ``io'' subpackage
     \item It contains functions (methods) for generating graphics (choropleth, histogram, etc.)
-    \item These function are simple calls to the Generators
+    \item These functions are simple calls to the Generators
     \item Each function returns a Figure object (for later use, show()/save())
   \end{itemize}
 

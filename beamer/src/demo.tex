@@ -18,7 +18,7 @@
   v = Visualizer('path/to/file.csv')
   fig = v.heatmap(countries='all', features='all',
                     method='pearson', mask=True,
-                    title='', xlabel='', ylabel='')
+                    title='This is a test heatmap', xlabel='Countries', ylabel='Countries')
   fig.show() #for inline display (in browsers for example)
   \end{lstlisting}
   \begin{center}
@@ -31,7 +31,7 @@
   \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.line(countries='all', features='all',
-              title='', xlabel='', ylabel='', 
+              title='This is a test of line plot', xlabel='Label of x axis', ylabel='Label of y axis', 
               legend=False)
     fig.show() # for inline display (in browsers for example)
       \end{lstlisting}
@@ -45,7 +45,7 @@
     \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.histogram(countries='all', features='all',
-                    title='', xlabel='', ylabel='', 
+                    title='This is a test histogram', xlabel='Label of x axis', ylabel='Label of y axis', 
                     legend=False)
     fig.show() # for inline display (in browsers for example)
     \end{lstlisting}
@@ -53,4 +53,3 @@
     \includegraphics[scale=0.6]{beamer/inc/graphics/histogram.png}
     \end{center}
 \end{frame}
-

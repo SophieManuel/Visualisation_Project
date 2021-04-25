@@ -1,5 +1,6 @@
 \begin{frame}[fragile,shrink=30]
    \frametitle{Choropleth}
+   Generates a choropleth map of given list of countries and indicator.`
    \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.choropleth(title = '...',
@@ -14,6 +15,7 @@
 
 \begin{frame}[fragile,shrink=30]
   \frametitle{Heatmap}
+  Generates a heatmap correlation matrix and allows to show in a glance which countries are correlated.
   \begin{lstlisting}[language=Python]
   v = Visualizer('path/to/file.csv')
   fig = v.heatmap(countries='all', features='all',
@@ -28,11 +30,12 @@
 
 \begin{frame}[fragile,shrink=30]
   \frametitle{Time Series Plot}
+  Generates a lineplot of given lists of countries and indicators.
   \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.line(countries='all', features='all',
               title='This is a test of line plot', xlabel='Label of x axis', ylabel='Label of y axis', 
-              legend=False)
+              legend=True)
     fig.show() # for inline display (in browsers for example)
       \end{lstlisting}
     \begin{center}
@@ -42,11 +45,12 @@
 
 \begin{frame}[fragile,shrink=30]
   \frametitle{Histogram}
+  Generates a histogram of given lists of countries and indicators.
     \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.histogram(countries='all', features='all',
                     title='This is a test histogram', xlabel='Label of x axis', ylabel='Label of y axis', 
-                    legend=False)
+                    legend=True)
     fig.show() # for inline display (in browsers for example)
     \end{lstlisting}
     \begin{center}

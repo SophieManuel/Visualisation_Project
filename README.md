@@ -98,10 +98,10 @@ Application is run in http://0.0.0.0:7890
 Here are exemples of animation we can produce with the package.  
 This animation is the evolution of mondial population from 1960 to 2019.  
 
-[<img src="movie/Tot_Pop.gif">]()
+[<img src="movie/animations/Tot_Pop.gif">]()
 
 And here is animation the evolution of Covid's death number for one year.  
-[<img src="movie/Covid_evol_1year.gif">]()
+[<img src="movie/animations/Covid_evol_1year.gif">]()
 
 
 ## Task affectation

@@ -6,7 +6,8 @@ This module contains the Figure class returned by the Visualizer methods
 import matplotlib
 import plotly
 import matplotlib.pyplot as plt
-
+import matplotlib.image as mpimg
+import os
 
 class Figure(object):
 
@@ -23,7 +24,11 @@ class Figure(object):
         if isinstance(self.figure, matplotlib.figure.Figure):
             self.figure.show()
         if isinstance(self.figure, plotly.graph_objs.Figure):
-            self.figure.show()
+            self.figure.write_image(file='tmp.png')
+            img = mpimg.imread('tmp.png')
+            imgplot = plt.imshow(img)
+            os.remove('tmp.png')
+            plt.show()
 
     def save(self, output_path):
         """

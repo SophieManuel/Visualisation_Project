@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import os
 
+
 class Figure(object):
 
     def __init__(self):

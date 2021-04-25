@@ -4,7 +4,7 @@
    \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
     fig = v.choropleth(title = '...',
-                  features = 'all',
+                  features = 'desired_feature',
                   countries = 'all')
     fig.show() # for inline display (in browsers for example)
     \end{lstlisting}
@@ -48,7 +48,8 @@
   Generates a histogram of given lists of countries and indicators.
     \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
-    fig = v.histogram(countries='all', features=['f1', 'f2', 'f3'],
+    fig = v.histogram(countries=['MAR', 'CHN', 'FRA', 'RUS', 'PYF', 'SEN'], 
+                    features=['f1', 'f2', 'f3'],
                     title='This is a test histogram', xlabel='Label of x axis', ylabel='Label of y axis', 
                     legend=True)
     fig.show() # for inline display (in browsers for example)

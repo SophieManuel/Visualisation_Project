@@ -1,36 +1,30 @@
-\begin{frame}
-  \frametitle{A Web Application}
+\begin{frame}{A Web Application}
+
+\begin{block}{The wwstatviz Web Application}
+    We wanted to develop a Web Application that would :
+  \begin{itemize}
+    \item be coded using the Python package Flask;
+    \item facilitate the displaying of the figures;
+    \item save the user from writing any Python code.
+  \end{itemize}
+
   % facilitate the usage for non-developer end-users
   % what it does, see readme
   % it is intuitive
   % As a backend, it uses a minimalistic and efficient python web framework: flask
   % it's in active development
-\end{frame}
+  
+\end{block}
 
-\begin{frame}[fragile, shrink = 20]
-  \frametitle{About Flask}
-  % search the internet and explain the concept here
-  % put a simple example of code (the one they provide in the quickstart of the
-  % doc)
-
-  \begin{itemize}
-    \item micro web framework for Python;
-    \item handy to launch small applications or web page
+\begin{block}{Current display options}
+    Currently, the figures are showed: 
+    \begin{itemize}
+        \item on a web page : choropleth map;
+        \item in a Python Shell : heatmap, lineplot and histogram.
   \end{itemize}
-
-The following code aims at displaying "Hello World!" on a web page: 
-
-\begin{lstlisting}[language=Python]
-  from flask import Flask
-  app = Flask(__name__)
-
-  @app.route("/")
-  def hello():
-      return "Hello World"
-
-
-  if __name__ == "__main__":
-      app.run(debug=False)
-\end{lstlisting}
-
+\end{block}
+  
 \end{frame}
+
+
+

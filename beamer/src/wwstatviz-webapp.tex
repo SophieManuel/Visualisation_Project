@@ -7,7 +7,7 @@
   % it's in active development
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile, shrink = 20]
   \frametitle{About Flask}
   % search the internet and explain the concept here
   % put a simple example of code (the one they provide in the quickstart of the
@@ -20,6 +20,17 @@
 
 The following code aims at displaying "Hello World!" on a web page: 
 
-  \includegraphics[scale=0.4]{../inc/graphics/flask.png}
+\begin{lstlisting}[language=Python]
+  from flask import Flask
+  app = Flask(__name__)
+
+  @app.route("/")
+  def hello():
+      return "Hello World"
+
+
+  if __name__ == "__main__":
+      app.run(debug=False)
+\end{lstlisting}
 
 \end{frame}

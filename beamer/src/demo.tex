@@ -48,7 +48,7 @@
   Generates a histogram of given lists of countries and indicators.
     \begin{lstlisting}[language=Python]
     v = Visualizer('path/to/file.csv')
-    fig = v.histogram(countries='all', features='all',
+    fig = v.histogram(countries='all', features=['f1', 'f2', 'f3'],
                     title='This is a test histogram', xlabel='Label of x axis', ylabel='Label of y axis', 
                     legend=True)
     fig.show() # for inline display (in browsers for example)
